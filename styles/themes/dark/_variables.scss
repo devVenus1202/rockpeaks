@@ -1,0 +1,132 @@
+@import 'styles/common/variables';
+//
+// Colors
+//
+$main-background: black;
+$main-color: white;
+$modal-border-color: #54657e;
+$border-color: #54657e;
+$component-bg: #3d4d65;
+$component-bg-secondary: #324054;
+$disabled-bg: darken($dark, 8%);
+
+$disactive-color: #6b7686;
+// main text color
+$main: white;
+$body-color: white;
+
+$text-color-reversed: #b9c5d8;
+$text-emphorsized: #fff;
+$text-muted: #b9c5d8;
+
+$text-header-hover: #b9c5d8;
+$text-header-active: #b9c5d8;
+// Buttons + Forms
+
+$input-bg: #374355;
+$input-border-color: #8493a8;
+$input-color: #b9c5d8;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $secondary;
+$input-focus-color: $input-color;
+
+// Modals
+
+// Padding applied to the modal body
+
+$modal-content-bg: #3d4d65;
+
+// Pagination
+
+$pagination-color: $text-grey;
+$pagination-bg: $component-bg;
+$pagination-border-color: $component-bg;
+
+$pagination-hover-color: $text-grey;
+$pagination-active-color: $white;
+$pagination-active-border-color: $warning;
+$pagination-active-bg: $warning;
+
+$pagination-disabled-color: $text-grey;
+$pagination-disabled-bg: $disabled-bg;
+$pagination-disabled-border-color: $disabled-bg;
+
+$pagination-hover-color: $text-grey;
+$pagination-hover-bg: darken($dark, 5%);
+$pagination-hover-border-color: darken($dark, 8%);
+
+$pagination-focus-box-shadow: $input-btn-focus-box-shadow;
+$pagination-focus-outline: 0;
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-bg: #3d4d65;
+
+$dropdown-link-color: #c5d0e0;
+$dropdown-link-hover-color: darken($gray-100, 5%);
+$dropdown-link-hover-bg: darken(#3d4d65, 5%);
+
+//Footer
+$footer-link-color: #f2f2f2;
+
+//Gradient background
+$gradient-bg-1: rgba(26, 30, 40, 0.65);
+$gradient-bg-2: rgba(62, 78, 100, 0.9);
+
+//header
+$header-color: #b9c5d8;
+$header-color-hover: #fff;
+$header-darker: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+$header-darker-hover: linear-gradient(
+  to bottom,
+  black 0%,
+  rgba(0, 0, 0, 0.5) 100%
+);
+
+$header-bright: linear-gradient(rgba(83, 101, 131, 1), rgba(28, 44, 70, 1));
+$header-bright-hover: linear-gradient(
+  rgba(83, 101, 131, 1),
+  rgba(28, 44, 70, 1)
+);
+
+$logo: '../../public/static/images/logo@2x.png';
+
+$link-color: $white;
+
+$menu-item-bg: #334155 linear-gradient(180deg, #323f52, #334155) repeat-x;
+
+$split-line-bg: $component-bg-secondary;
+
+//image mask
+$gradient-mask: (
+  '1': #0e0e0e,
+  '2': rgba(14, 14, 14, 0.21),
+  '3': rgba(14, 14, 14, 0),
+);
+
+// $background-mask-color: transparent;
+$background-mask-color: rgba(28, 44, 70, 0.6);
+//secondary navbar
+$sec-nav-bg: rgba(39, 45, 55, 0.65);
+$sec-nav-active-bg: $input-bg;
+$sec-nav-hover-bg: rgba(39, 45, 55, 1);
+$sec-nav-hover-color: #fff;
+$sec-nav-color: $secondary;
+$media-box-hover-bg: #37465b;
+
+//detail page background
+$detailPageBg: #272d37;
+$detailPageGradient1: rgba(48, 49, 52, 0.45);
+$detailPageGradient2: rgba(39, 45, 55, 1);
+
+//Chip
+$tag-bg: #8493a8;
+
+$custom-control-indicator-border: $custom-control-indicator-border;
+
+$thumb-border-color: #202830;
+
+$stripped-color: rgba(42, 62, 83, 0.5);

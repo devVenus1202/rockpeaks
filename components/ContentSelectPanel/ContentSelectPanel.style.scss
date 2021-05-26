@@ -1,0 +1,197 @@
+@import 'styles/themes/theme';
+
+.content-select-panel {
+  @include themify($themes) {
+    padding: 30px 0 0px;
+
+    &-bg {
+      background-color: themed(secondaryNavBg);
+      @include trans;
+
+      &:hover {
+        background-color: themed(secondaryNavHoverBg);
+      }
+    }
+
+    .container {
+      @include media-breakpoint-down(lg) {
+        max-width: 100%;
+      }
+    }
+
+    .panel {
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      background-color: themed('componentBackground');
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+
+    .secondary-nav {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-basis: auto;
+      font-size: 0;
+      align-items: center;
+
+      &.secondary-nav-list {
+        color: themed('textMuted');
+
+        li {
+          border: none;
+          padding: 15px;
+          &:hover {
+            border: none;
+          }
+          @include media-breakpoint-down(lg) {
+            padding: 15px 10px;
+          }
+        }
+
+        .dropdown-toggle img {
+          display: inline-block;
+          margin-right: 10px;
+          max-width: 16px;
+        }
+
+        li > a {
+          display: inline-block;
+          color: inherit;
+          // padding: 10px;
+
+          & > img {
+            padding: 10px;
+          }
+        }
+      }
+
+      &.secondary-nav-list-dropdown {
+        li {
+          padding: 0;
+
+          @include media-breakpoint-down(sm) {
+            display: block;
+          }
+        }
+
+        .secondary-nav-list-link {
+          padding: 25px;
+          display: inline-block;
+          text-decoration: none;
+          border-right: 1px solid transparent;
+          color: inherit;
+          &:hover,
+          &.active,
+          &:focus {
+            color: $secondary;
+            background-color: $dropdown-bg;
+            text-decoration: none;
+            border-right: 1px solid #31363f;
+            color: $text-grey;
+          }
+        }
+
+        @include media-breakpoint-down(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        display: block;
+        border-bottom: 1px solid #374355;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      li {
+        @include rem(14);
+        display: inline-block;
+        border-right: 1px solid #374355;
+        pointer-events: auto;
+        a {
+          pointer-events: auto;
+        }
+        &:hover {
+          // border-right: 1px solid transparent;
+        }
+
+        &.active,
+        &.hover {
+          // border-right: 1px solid transparent;
+        }
+        &.active div.default,
+        &.hover div.default {
+          display: none;
+        }
+        &.active div.active,
+        &.hover div.active {
+          display: block;
+        }
+        &.active .secondary-nav-link {
+          color: themed('textColorSecondary') !important;
+          background-color: themed('secondaryNavActiveBg');
+          border-bottom: 2px solid $warning;
+        }
+      }
+    }
+
+    .disabled-navbar {
+      li.active {
+        pointer-events: auto;
+        a {
+          pointer-events: auto;
+        }
+      }
+      li {
+        pointer-events: none;
+        a {
+          pointer-events: none;
+        }
+      }
+    }
+
+    .secondary-nav-link {
+      min-width: 90px;
+      padding: 15px 15px;
+      display: inline-block;
+      text-align: center;
+      color: themed('secondaryNavColor') !important;
+      text-transform: capitalize;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+
+      &:hover {
+        color: themed('textColorSecondary') !important;
+        text-decoration: none;
+        border-bottom: 2px solid $warning;
+        img.active {
+          display: block;
+        }
+        img.default {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding: 5px 10px;
+        min-width: 55px;
+      }
+
+      .default,
+      .active {
+        width: 100%;
+        max-width: 32px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        &.active {
+          display: none;
+        }
+      }
+    }
+  }
+}

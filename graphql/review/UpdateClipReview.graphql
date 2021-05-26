@@ -1,0 +1,38 @@
+mutation UpdateClipReview(
+  $id: String!
+  $title: String
+  $clip: String!
+  $body: String
+  $clip_tags: [String!]
+) {
+  updateClipReview(
+    id: $id
+    input: { title: $title, clip: $clip, body: $body, clip_tags: $clip_tags }
+  ) {
+    entity {
+      entityId
+      entityLabel
+      ... on NodeReview {
+        clip {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        body {
+          value
+        }
+        clipTags {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

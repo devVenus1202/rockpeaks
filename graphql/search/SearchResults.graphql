@@ -1,0 +1,23 @@
+query searchResults($start: Int!, $end: Int!, $fulltext: FulltextInput, $conditionGroup: ConditionGroupInput, $sort: [SortInput]) {
+  searchAPISearch(
+    range: {
+      offset: $start,
+      limit: $end
+    },
+    index_id: "clip_index",
+    fulltext: $fulltext,
+    condition_group: $conditionGroup,
+    sort: $sort,
+  ) {
+    result_count
+    documents {
+      ... on ClipIndexDoc {
+        content_type
+        name_sort_order
+        nid
+        title
+        uuid
+      }
+    }
+  }
+}

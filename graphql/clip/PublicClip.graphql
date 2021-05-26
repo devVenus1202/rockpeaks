@@ -1,0 +1,36 @@
+fragment clipDetailsPublicClip on NodePublicClip {
+  body {
+    processed
+    summaryProcessed
+  }
+  publicSource
+  url
+  viewCount
+  commentCount
+  clipTitle
+  durationHours
+  durationMins
+  durationSecs
+  videoStatus
+  uploader
+  uploaderClipTitle
+  bitrate
+  widthAndHeight
+  verticalResolution
+  channelUrl
+  uploadDate {
+    value
+    date
+  }
+}
+
+query clipDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ...clipDetailsPublicClip
+  }
+}

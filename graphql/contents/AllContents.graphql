@@ -1,0 +1,114 @@
+fragment artistDetails on NodeArtist {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyPublicityImage {
+    uri
+  }
+  totalClips: reverseShowNode(filter: {}) {
+    count
+  }
+  activeClips: reverseShowNode(filter: {conditions: [{field: "status", value: "1", operator: EQUAL}]}) {
+    count
+  }
+}
+
+fragment clipDetailsAllContents on NodeClip {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyImageSmall {
+    url {
+      path
+    }
+  }
+    fieldStillImage {
+      url
+    }
+    smartStillImage {
+      uri
+    }
+    smartStillImage320x480 {
+      uri
+    }
+    smartStillImage640x480 {
+      uri
+    }
+    smartStillImage1280x720 {
+      uri
+    }
+  fieldYear
+  fieldMonth
+  fieldDay
+  artist {
+    entity {
+      title
+    }
+  }
+  show {
+    entity {
+      title
+    }
+  }
+  clipTitle
+  clipType {
+    entity {
+      entityLabel
+    }
+  }
+}
+
+fragment discDetails on NodeDisc {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyImage {
+    uri
+  }
+  discType {
+    entity {
+      entityLabel
+    }
+  }
+  clips {
+    entity {
+      status
+    }
+  }
+}
+
+fragment showDetailsAllContents on NodeShow {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyImage {
+    uri
+  }
+  totalClips: reverseShowNode(filter: {}) {
+    count
+  }
+  activeClips: reverseShowNode(filter: {conditions: [{field: "status", value: "1", operator: EQUAL}]}) {
+    count
+  }
+}
+
+query allContents($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter) {
+    entities {
+      entityId
+      ...clipDetailsAllContents
+      ...discDetails
+      ...artistDetails
+      ...showDetailsAllContents
+    }
+    count
+  }
+}

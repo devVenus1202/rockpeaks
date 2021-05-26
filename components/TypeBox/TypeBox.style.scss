@@ -1,0 +1,67 @@
+@import 'styles/themes/theme';
+
+.typebox-wrapper {
+  @include themify($themes) {
+    .custom-checkbox {
+      padding-left: 25px;
+    }
+    .secondary-card {
+      background-color: themed('componentBackground');
+      border-radius: $border-radius;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-bottom: 30px;
+
+      &-header {
+        padding: 20px 30px;
+        background-color: darken(themed('componentBackground'), 5%);
+        position: relative;
+        z-index: 4;
+      }
+
+      &-body {
+        padding: 15px;
+        position: relative;
+        z-index: 4;
+
+        &.secondary-card-body-scroll {
+          overflow-y: scroll;
+          max-height: 327px;
+          height: 327px;
+
+          @include media-breakpoint-down(sm) {
+            overflow-y: visible;
+            max-height: 100%;
+          }
+        }
+
+        .form-group {
+          margin-bottom: 17px;
+        }
+
+        &-calendar {
+          padding: 1rem 0;
+        }
+      }
+
+      &-footer {
+        padding: 11px 15px;
+        background-color: darken(themed('componentBackground'), 5%);
+        position: relative;
+        z-index: 5;
+        box-shadow: 0px -10px 30px 10px themed('componentBackground');
+
+        .form-group {
+          margin-bottom: 0px;
+          button {
+            background: transparent;
+          }
+        }
+      }
+      .form-control {
+        background-color: darken(themed('componentBackground'), 3%);
+        border-color: darken(themed('borderColor'), 3%);
+      }
+    }
+  }
+}

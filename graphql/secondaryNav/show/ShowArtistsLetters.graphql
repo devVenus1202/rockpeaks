@@ -1,0 +1,25 @@
+query artistsByShowLetter($conditions: [EntityQueryFilterConditionInput]) {
+  artistsByLetter: nodeQuery(
+    filter: {
+      conditions: $conditions
+    },
+    limit: 100000,
+    sort: {
+      field: "artist.entity.title",
+      direction: ASC
+    }
+  ) {
+    entities {
+      ... on NodeClip {
+        artist {
+          entity {
+            ... on NodeArtist {
+              artistName: title
+              artistNid: nid
+            }
+          }
+        }
+      }
+    }
+  }
+}

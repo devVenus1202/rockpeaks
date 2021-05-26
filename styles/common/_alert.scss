@@ -1,0 +1,72 @@
+@mixin alert-variant($background, $border, $color) {
+  @include gradient-bg(rgba($background, 0.15));
+  border-color: $border;
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+  .alert-link {
+    color: darken($color, 0%);
+  }
+}
+
+.alert {
+  color: white;
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  @include border-radius($alert-border-radius);
+
+  &.lone-message {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+
+  .fa {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 1.5rem;
+  }
+}
+
+.alert-dismissible {
+  padding-right: $close-font-size + $alert-padding-x * 2;
+  padding-left: $close-font-size + $alert-padding-x * 1.5;
+  // Adjust close link position
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $alert-padding-close-y $alert-padding-close-x;
+    color: inherit;
+    text-shadow: none;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+  }
+}
+
+
+.alert-custom-sm {
+  text-transform: capitalize;
+  @include rem(12);
+  padding: 0.5rem 1rem;
+  line-height: 13px;
+  display: inline-block;
+  color: $secondary;
+  &.alert-dark {
+    background-color: #2e3a4d;
+    border-color: #2e3a4d;
+  }
+  &.alert-secondary {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: #fff
+  }
+}
+

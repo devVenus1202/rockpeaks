@@ -1,0 +1,38 @@
+query datesShowsByArtist(
+$conditions: [EntityQueryFilterConditionInput],
+) {
+  datesShows: nodeQuery(
+    limit: 100000,
+    filter: {
+      conditions: $conditions,
+    },
+    sort: [
+      {
+        field: "field_month",
+        direction: ASC,
+      },
+      {
+        field: "field_day",
+        direction: ASC,
+      },
+      {
+        field: "show.entity.title",
+        direction: ASC,
+      }
+    ]
+  ) {
+    entities {
+      ... on NodeClip {
+        fieldDay
+        fieldMonth
+        fieldYear
+        show {
+          entity {
+            show: title
+            showNid: nid
+          }
+        }
+      }
+    }
+  }
+}

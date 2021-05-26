@@ -1,0 +1,84 @@
+@import 'styles/themes/theme.scss';
+
+.modal-dialog.sign-modal {
+  @include themify_class($themes) {
+    max-width: 370px !important;
+    border: none;
+
+    button {
+      outline: none; // this one
+    }
+    .modal-header {
+      border: none;
+    }
+    .navbar-brand {
+      position: absolute;
+      margin: auto;
+      width: calc(100% - 2rem);
+      text-align: center;
+    }
+    .spinner-login {
+      border-width: 0.1em;
+      margin-bottom: 0.2em;
+    }
+    .login-delimiter {
+      font-weight: 300;
+      text-transform: uppercase;
+      display: inline-block;
+      width: 100%;
+      max-width: 130px;
+      margin: 0 auto;
+      position: relative;
+      span {
+        color: themed('textColor');
+        @include rem(14);
+        background-color: themed('backgroundColor');
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: themed('borderColor');
+        position: absolute;
+        top: 11px;
+        left: 0;
+        z-index: 1;
+      }
+    }
+
+    .login-social-btn-container {
+      margin-bottom: 2.5rem;
+
+      .btn {
+        text-transform: inherit;
+        margin-bottom: 1rem;
+        width: 100%;
+        @include rem(14);
+        position: relative;
+        padding-left: 50px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .fa {
+        @include rem(18);
+      }
+
+      .social-btn-icon {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        margin-top: -5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import 'styles/themes/dark/variables';
+
+.sortable-list-container.has-divider {
+  .sortable-item-style {
+    border-bottom: 1px solid $modal-border-color;
+  }
+}
+
+.sortable-list-title {
+  small {
+    padding-left: 1.5rem;
+    padding: 0.75rem;
+  }
+  margin-bottom: 10px;
+}
+
+.sortable-item-style {
+  z-index: 1100;
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  div {
+    display: inline-block;
+    padding: 0.75rem;
+  }
+  .sortable-item-dragger {
+    padding: 0.75rem;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    width: 8%;
+  }
+  .sortable-item-delete {
+    cursor: pointer;
+    width: 8%;
+  }
+
+  .sortable-item-text {
+    p {
+      font-size: 1rem;
+    }
+    width: 84%;
+  }
+}

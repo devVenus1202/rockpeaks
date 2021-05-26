@@ -1,0 +1,127 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/theme';
+
+.account-setting-modal {
+  .custom-control {
+    padding-left: 1.5rem;
+  }
+  .tab-content {
+    .tab-pane {
+      display: block;
+      height: 0;
+      opacity: 0;
+      padding-top: 0px !important;
+      visibility: hidden;
+      transition: visiblility 0.25s, opacity 0.25s;
+      .tab-pane.active {
+        height: 0;
+        opacity: 0;
+        padding-top: 0px !important;
+        visibility: hidden;
+      }
+    }
+    .tab-pane.active {
+      opacity: 1;
+      height: 100%;
+      padding-top: 1rem !important;
+      visibility: visible;
+      .tab-pane.active {
+        opacity: 1;
+        height: 100%;
+        padding-top: 1rem !important;
+        visibility: visible;
+      }
+    }
+  }
+
+  .btn-sm,
+  .btn-group-sm > .btn {
+    @include rem(14);
+    min-width: 5.5rem;
+  }
+  input.form-control {
+    &::placeholder {
+      text-align: left;
+    }
+  }
+  .setting-avatar {
+    display: inline-block;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 90px;
+    height: 90px;
+    border: 1px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 2px;
+    background: rgba(250, 217, 97, 1);
+    background: -moz-linear-gradient(
+      top,
+      rgba(250, 217, 97, 1) 0%,
+      rgba(249, 162, 62, 1) 49%,
+      rgba(247, 108, 28, 1) 100%
+    );
+    background: -webkit-gradient(
+      left top,
+      left bottom,
+      color-stop(0%, rgba(250, 217, 97, 1)),
+      color-stop(49%, rgba(249, 162, 62, 1)),
+      color-stop(100%, rgba(247, 108, 28, 1))
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(250, 217, 97, 1) 0%,
+      rgba(249, 162, 62, 1) 49%,
+      rgba(247, 108, 28, 1) 100%
+    );
+    background: -o-linear-gradient(
+      top,
+      rgba(250, 217, 97, 1) 0%,
+      rgba(249, 162, 62, 1) 49%,
+      rgba(247, 108, 28, 1) 100%
+    );
+    background: -ms-linear-gradient(
+      top,
+      rgba(250, 217, 97, 1) 0%,
+      rgba(249, 162, 62, 1) 49%,
+      rgba(247, 108, 28, 1) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(250, 217, 97, 1) 0%,
+      rgba(249, 162, 62, 1) 49%,
+      rgba(247, 108, 28, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fad961', endColorstr='#f76c1c', GradientType=0 );
+    img {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .text-capitalize {
+    a {
+      color: white;
+    }
+  }
+  .theme-selector {
+    width: 100%;
+  }
+  @include themify_class($themes) {
+    .passwordStatus {
+      padding-left: 5px;
+      color: themed('mainColor') !important;
+    }
+    .profile-link {
+      margin: 20px 20px 20px 0;
+      color: themed('mainColor') !important;
+      display: block;
+    }
+  }
+  .lead {
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,11 @@
+@import 'styles/themes/theme';
+.media-activity {
+  @include themify($themes) {
+    .title {
+      color: themed('mainColor');
+    }
+    .thumb-block {
+      width: 133px;
+    }
+  }
+}

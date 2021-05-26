@@ -1,0 +1,46 @@
+fragment clipDetailsClipContents on NodeClip {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyImageSmall {
+    url {
+      path
+    }
+  }
+  fieldStillImage {
+    url
+  }
+  fieldYear
+  fieldMonth
+  fieldDay
+  artist {
+    entity {
+      nid
+      title
+    }
+  }
+  show {
+    entity {
+      nid
+      title
+    }
+  }
+  clipTitle
+  clipType {
+    entity {
+      entityLabel
+    }
+  }
+}
+
+query clipContents($filter: EntityQueryFilterInput, $limit: Int, $offset: Int) {
+  nodeQuery(filter: $filter, limit: $limit, offset: $offset) {
+    entities {
+      entityId
+      ...clipDetailsClipContents
+    }
+    count
+  }
+}

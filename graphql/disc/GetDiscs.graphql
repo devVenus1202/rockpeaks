@@ -1,0 +1,46 @@
+query discs {
+  nodeQuery(
+    filter: {
+      conditions: [{ field: "type", value: "disc", operator: EQUAL }, { field: "status", value: "1", operator: EQUAL }]
+    }
+    sort: { field: "title", direction: ASC }
+    offset: 0
+    limit: 10
+  ) {
+    count
+    entities {
+      entityId
+      ... on NodeDisc {
+        nid
+        title
+        body {
+          processed
+        }
+        discType {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        isMasterDisc
+        discArtwork {
+          url
+        }
+        legacyImage {
+          url {
+            path
+          }
+        }
+        created
+        changed
+        status
+        clips {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+  }
+}

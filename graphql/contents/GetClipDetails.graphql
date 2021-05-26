@@ -1,0 +1,35 @@
+
+query getClipDetails($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ... on NodeClip {
+      nid
+      clipTitle
+      legacyImageSmall {
+        url {
+          path
+        }
+      }
+      fieldStillImage {
+        url
+      }
+      fieldYear
+      fieldMonth
+      fieldDay
+      artist {
+        entity {
+          title
+        }
+      }
+      show {
+        entity {
+          title
+        }
+      }
+    }
+  }
+}

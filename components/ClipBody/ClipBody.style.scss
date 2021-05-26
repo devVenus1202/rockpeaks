@@ -1,0 +1,228 @@
+@import 'styles/themes/theme';
+
+.clip-body-style {
+	@include themify($themes) {
+		.btn {
+			font-size: 0.8rem;
+			min-width: 4.5rem;
+		}
+
+		.clip-title {
+			color: themed('textColorEmphorsized');
+		}
+		.clip-title-link {
+			color: themed('textColorEmphorsized');
+		}
+		.uploaded-file {
+			&--box {
+			}
+
+			&-video {
+				max-width: 200px;
+				width: 100%;
+				// min-height: 160px;
+				overflow: hidden;
+				position: relative;
+				border-radius: $border-radius;
+				margin-bottom: 30px;
+
+				&.bigger {
+					max-width: 290px;
+					padding: 20px;
+					box-sizing: initial;
+					margin: -20px 0 0 -20px;
+				}
+
+				img {
+					width: 100%;
+					max-width: 290px;
+				}
+
+				.play-video-btn {
+					display: block;
+					cursor: pointer;
+					position: relative;
+					&:hover .play-video-icon {
+						transform: scale(1.2);
+					}
+
+					.play-video-icon-box {
+						border: 1px solid rgb(32, 40, 48);
+					}
+					&:hover .play-video-icon-box {
+						background-color: rgba($black, 0.5);
+						border: 1px solid #66afe9;
+						-webkit-box-shadow: 0 1px 1px rgba(80, 70, 70, 0.075) inset, 0 0 8px themed('thumbShadowColor');
+						-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px themed('thumbShadowColor');
+						box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px themed('thumbShadowColor');
+					}
+					&:hover {
+					}
+
+					.inactive {
+						background-color: rgba($black, 0.5);
+						.inactive-btn {
+							text-transform: uppercase;
+							font-size: 1.3em;
+							font-weight: bolder;
+						}
+						.more {
+							cursor: pointer;
+							font-weight: bolder;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+
+				.play-video-icon {
+					display: inline-block;
+					width: 100%;
+					max-width: 21px;
+					position: absolute;
+					top: 50%;
+					margin-top: -14px;
+					left: 50%;
+					margin-left: -10px;
+					@include trans;
+
+					&-box {
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						background-color: rgba($dark, 0);
+						@include trans;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-direction: column;
+					}
+				}
+			}
+
+			&-text {
+				color: themed('textMuted');
+				margin-bottom: 30px;
+			}
+		}
+
+		.clip-info-item {
+			color: themed('textMuted');
+		}
+		.custom-alert.alert-dismissible {
+			padding-left: 1.5rem;
+		}
+		.list-icon-item {
+			margin: 0;
+			margin-bottom: 2rem;
+			padding: 0;
+			color: themed('textMuted');
+			font-size: 0;
+			white-space: nowrap;
+			li {
+				display: inline-block;
+				@include rem(14);
+				margin-right: 15px;
+				margin-left: 15px;
+				padding-bottom: 3px;
+				padding-top: 3px;
+				padding-left: 3px;
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&.active {
+					border-bottom: 1px solid $warning;
+
+					a {
+						color: themed('textColor');
+					}
+				}
+			}
+			&.left-icon a {
+				background-repeat: no-repeat;
+				background-position-y: center;
+				// padding-left: 1.5rem;
+				background-size: 1em 1em;
+				min-width: 80px;
+			}
+			a.youtube_link {
+				min-width: max-content;
+				text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			&.right-icon a {
+				background-repeat: no-repeat;
+				background-position-y: center;
+				background-position-x: 95%;
+				padding-right: 1.5rem;
+				background-size: 1em 1em;
+				&.checkedIcon {
+					background-image: url(#{themed('iconFolder')}/Checked-Circle-Icon.svg);
+				}
+				&.closeIcon {
+					background-image: url(#{themed('iconFolder')}/Close-Circle-Icon.svg);
+					background-size: 0.8em;
+				}
+			}
+			// .clip-duration-item {
+			//   width: 100px;
+			//   a {
+			//     background-image: url(#{themed('iconFolder')}/Time-Icon.svg);
+			//   }
+			// }
+			// .clip-video-item {
+			//   a {
+			//     background-image: url(#{themed('iconFolder')}/Video-Icon.svg);
+			//   }
+			// }
+
+			img {
+				width: 100%;
+				max-width: 14px;
+				display: inline-block;
+				position: relative;
+				top: -2px;
+				&.smaller {
+					max-width: 12px;
+				}
+				&.cloce-icon {
+					max-width: 9px;
+				}
+			}
+
+			&.left-icon img {
+				margin-right: 6px;
+			}
+
+			&.right-icon img {
+				margin-left: 10px;
+			}
+
+			a {
+				display: inline-block;
+				color: themed('textMuted');
+				white-space: nowrap;
+				text-decoration: none;
+
+				&:hover {
+					color: themed('textMuted');
+				}
+				svg {
+					path {
+						fill: themed('secondaryNavHoverColor') !important;
+					}
+				}
+			}
+		}
+	}
+}

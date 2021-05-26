@@ -1,0 +1,14 @@
+mutation addToDefaultPlaylist($playlistType: String!, $entityId: String!) {
+  addToDefaultPlaylist(type: $playlistType, entity_id: $entityId) {
+    errors
+    violations {
+      message
+    }
+    entity {
+      entityId
+      ... on FlaggingFavourites {
+        entityIdOfFlagging
+      }
+    }
+  }
+}

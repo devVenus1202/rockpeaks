@@ -1,0 +1,16 @@
+query {
+  getPlexMediaItems {
+    message
+    count
+    result {
+      key
+      title
+      file
+      bitrate
+      videoResolution
+      duration
+      sectionKey
+      sectionUuid
+    }
+  }
+}

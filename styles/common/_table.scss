@@ -1,0 +1,36 @@
+@import 'styles/themes/theme';
+
+.table {
+	@include themify($themes) {
+		@include rem(14);
+		font-weight: 300;
+		color: themed("textMuted");
+		@include media-breakpoint-down(md) {
+			background-color: #4f5c71;
+		}
+
+		thead th {
+			font-weight: 400;
+			color: themed("textMuted");
+		}
+
+		th {
+			font-weight: 400;
+			color: themed("textMuted");
+		}
+
+		th,
+		td {
+			vertical-align: middle;
+			border-top: none;
+			border-bottom: 1px solid $border-color;
+		}
+	}
+}
+
+.table-hover tbody tr:hover {
+	@include themify($themes) {
+		color: themed("mainColor");
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+}

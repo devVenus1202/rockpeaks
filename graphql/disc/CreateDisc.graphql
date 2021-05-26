@@ -1,0 +1,41 @@
+mutation createDisc(
+  $title: String!
+  $body: String!
+  $isMasterDisc: Boolean!
+  $discType: String!
+  $clips: [String!]
+) {
+  createDisc(
+    title: $title
+    body: $body
+    is_master_disc: $isMasterDisc
+    disc_type: $discType
+    clips: $clips
+  ) {
+    entity {
+      entityId
+      entityLabel
+      ... on NodeDisc {
+        title
+        body {
+          processed
+        }
+        discType {
+          entity {
+            entityLabel
+          }
+        }
+        clips {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

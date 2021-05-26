@@ -1,0 +1,54 @@
+fragment clipDetailsNodeContents on NodeClip {
+  nid
+  title
+  legacyImage {
+    url {
+      path
+    }
+  }
+  fieldStillImage {
+    url
+  }
+  smartStillImage {
+    uri
+  }
+  smartStillImage320x480 {
+    uri
+  }
+  smartStillImage640x480 {
+    uri
+  }
+  smartStillImage1280x720 {
+    uri
+  }
+  fieldYear
+  fieldMonth
+  fieldDay
+  artist {
+    entity {
+      nid
+      title
+    }
+  }
+  show {
+    entity {
+      nid
+      title
+    }
+  }
+  clipTitle
+  clipType {
+    entity {
+      entityLabel
+    }
+  }
+}
+
+query nodeContents($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter, limit: 100, sort: { field: "title", direction: ASC }) {
+    entities {
+      entityId
+      ...clipDetailsNodeContents
+    }
+  }
+}

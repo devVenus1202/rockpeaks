@@ -1,0 +1,3 @@
+query AutoComplete($target_type: String!, $bundle: String!, $string: String!) {
+	autocomplete(target_type: $target_type, bundle: $bundle, string: $string)
+}

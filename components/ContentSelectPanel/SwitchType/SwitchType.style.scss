@@ -1,0 +1,11 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/dark/variables';
+
+.switch-type {
+  padding: 15px;
+  text-align: center;
+
+  @include media-breakpoint-down(sm) {
+    padding: 15px 10px;
+  }
+}

@@ -1,0 +1,21 @@
+mutation matchPlexMediaItem($plexMediaItemKey: String!, $plexSectionUuid: String!) {
+  matchPlexMediaItem(plexMediaItem_key: $plexMediaItemKey, plexSection_uuid: $plexSectionUuid) {
+    message
+    plexMediaItem {
+      key
+      title
+      file
+      bitrate
+      duration
+      videoResolution
+    }
+    matchedClip {
+      entityId
+      entityLabel
+    }
+    personalClip {
+      entityId
+      entityLabel
+    }
+  }
+}

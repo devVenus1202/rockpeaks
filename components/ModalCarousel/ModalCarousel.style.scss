@@ -1,0 +1,35 @@
+@import 'styles/themes/theme';
+
+.slick-carousel-wrap {
+  // width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2rem;
+  @include themify($themes) {
+    .btn-link.prev {
+      left: 1rem !important;
+    }
+    .btn-link.next {
+      right: 1rem !important;
+    }
+    .btn-link.prev,
+    .btn-link.next {
+      top: 75px;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: themed('mainColor') !important;
+    }
+    .review-nav-link {
+      border: none !important;
+    }
+    .review-nav-link.active-nav-link {
+      .nav-link-card {
+        border-bottom: 2px solid #ff9948;
+      }
+      .theme-dark .nav-tabs .nav-link.active:not(.disabled) {
+        border: none;
+      }
+    }
+  }
+}

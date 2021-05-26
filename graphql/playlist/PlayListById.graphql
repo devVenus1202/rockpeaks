@@ -1,0 +1,17 @@
+query getPlayList($id: String!) {
+  nodeById(id: $id) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ... on NodePlaylist {
+      clips {
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+    }
+  }
+}

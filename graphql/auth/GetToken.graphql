@@ -1,0 +1,11 @@
+query {
+  getJwtToken {
+    uid
+    token
+    issued_at
+    issued_at_formatted
+    expire_at
+    expire_at_formatted
+    error
+  }
+}

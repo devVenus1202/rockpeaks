@@ -1,0 +1,6 @@
+query {
+  extendedAutocomplete(target_type: "node", bundle: "show", string: "test x") {
+    entityId
+    entityTitle
+  }
+}

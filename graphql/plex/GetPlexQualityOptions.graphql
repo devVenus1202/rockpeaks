@@ -1,0 +1,17 @@
+query getQualityOptions($authToken: String!, $clientId: String!, $mediaPath: String!, $sectionUuid: String!) {
+  qualityOptions: plexGetVideoTranscodeQualityOptions(
+    authToken: $authToken
+    clientId: $clientId
+    mediaPath: $mediaPath
+    sectionUuid: $sectionUuid
+  ) {
+    name
+    default
+    bitrate
+    height
+    maxVideoBitrate
+    videoQuality
+    videoResolution
+    transcodeVideoUrl
+  }
+}

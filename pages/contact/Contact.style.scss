@@ -1,0 +1,18 @@
+@import 'styles/themes/dark/variables';
+@import 'styles/common/mixins';
+
+.contact-form-wrapper {
+  background: url('/static/images/contact-bg.jpg') top center no-repeat,
+    linear-gradient(rgba(61, 77, 101, 0.8), rgba(61, 77, 101, 0.8));
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: {
+    bottom: 4rem;
+  }
+}
+
+.thank-you {
+}

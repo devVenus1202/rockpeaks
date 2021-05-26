@@ -1,0 +1,26 @@
+.edit-review-modal {
+  max-width: 900px !important;
+}
+.rating-selector-input {
+  display: inline-block;
+  width: 250px;
+}
+.add-tag {
+  display: flex;
+  input {
+    margin-right: 20px;
+  }
+}
+.draft-container {
+  // height: 500px;
+}
+.rbt-input-multi.focus {
+  outline: 0;
+  background-color: #374355;
+  color: #b9c5d8;
+  border-color: #8493a8 !important;
+  box-shadow: 0 0 0 0.2rem rgba(132, 147, 168, 0.25) !important;
+}
+.description {
+  line-height: 1.8em;
+}

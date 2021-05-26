@@ -1,0 +1,78 @@
+query getUserInfo($uid: String!) {
+  userById(id: $uid) {
+    uuid
+    name
+    mail
+    roles {
+      entity {
+        entityId
+        entityLabel
+      }
+    }
+    rpCustomerProfiles {
+      targetId
+      entity {
+        ... on ProfileRpCustomer {
+          avatarImage {
+            thumbnail: derivative(style: THUMBNAIL) {
+              url
+              width
+              height
+            }
+            large: derivative(style: LARGE) {
+              url
+              width
+              height
+            }
+            url
+            width
+            height
+            alt
+            title
+          }
+          themeSelectionState
+          fbProfileLink {
+            uri
+          }
+          twitterProfileLink {
+            uri
+          }
+        }
+      }
+    }
+    # reverseUidProfile {
+    #   entities {
+    #     ... on Profile {
+    #       entityId
+    #       ... on ProfileRpCustomer {
+    #         avatarImage {
+    #           thumbnail: derivative(style: THUMBNAIL) {
+    #             url
+    #             width
+    #             height
+    #           }
+    #           large: derivative(style: LARGE) {
+    #             url
+    #             width
+    #             height
+    #           }
+    #           url
+    #           width
+    #           height
+    #           alt
+    #           title
+    #         }
+    #         themeSelectionState
+    #         fbProfileLink {
+    #           uri
+    #         }
+    #         twitterProfileLink {
+    #           uri
+    #         }
+    #         rp_user_public_profile_link
+    #       }
+    #     }
+    #   }
+    # }
+  }
+}

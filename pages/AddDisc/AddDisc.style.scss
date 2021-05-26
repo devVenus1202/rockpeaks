@@ -1,0 +1,45 @@
+.add-disc-page {
+  section > div.container {
+    padding: 0 24px;
+  }
+  .uploaded-file-video {
+    img {
+      width: 266px;
+      height: 150px;
+    }
+  }
+  .nav-tabs {
+    border: none;
+    .nav-link {
+      text-align: center;
+    }
+  }
+  .slick-carousel-wrap {
+    margin-left: -70px;
+  }
+  .window-section-box {
+    padding-left: 70px;
+    padding-right: 70px;
+    .lead {
+      line-height: 1.8em;
+    }
+  }
+  .prevewImage {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .artwork-upload {
+    .upload-btn {
+      vertical-align: top;
+    }
+  }
+  .add-another {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .previewArtwork {
+    img {
+      max-width: 100%;
+    }
+  }
+}

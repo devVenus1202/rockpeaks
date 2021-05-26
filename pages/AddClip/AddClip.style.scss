@@ -1,0 +1,47 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/theme';
+
+.add-clip-page {
+  section > div.container {
+    padding: 0 24px;
+    .text-muted {
+      line-height: 1.8em;
+    }
+  }
+  .uploaded-file-video {
+    img {
+      width: 266px;
+      height: 150px;
+    }
+  }
+  .form-wrapper {
+    min-height: 450px;
+  }
+  .add-another {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .checkIcon {
+    width: 1.2rem;
+    margin-top: 1rem;
+  }
+  .td-clip-info {
+    line-height: 1.5;
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    overflow: hidden;
+  }
+  .prefix-span {
+    min-width: 60px;
+  }
+  .row-checkIcon {
+    right: -20px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  @include themify_class($themes) {
+    .stripped-row {
+      background: themed('strippedColor');
+    }
+  }
+}

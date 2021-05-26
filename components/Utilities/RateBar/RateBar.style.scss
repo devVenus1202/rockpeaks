@@ -1,0 +1,26 @@
+.rating-list {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    padding-right: 1px;
+    padding-left: 1px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  img {
+    display: inline-block;
+    width: 100%;
+    max-width: 16px;
+  }
+}

@@ -1,0 +1,29 @@
+query artistDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ... on NodeArtist {
+      screenPercentage
+      body {
+        processed
+        summaryProcessed
+      }
+      artistMusicbrainzId
+      artistWikipediaBody {
+        processed
+        bodySummary
+      }
+      legacyPublicityImage {
+        url {
+          path
+        }
+      }
+      artistBackgroundImage {
+        url
+      }
+    }
+  }
+}

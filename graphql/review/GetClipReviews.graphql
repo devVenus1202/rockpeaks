@@ -1,0 +1,62 @@
+query clipReviews($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter) {
+    entities {
+      entityId
+      ... on NodeReview {
+        nid
+        title
+        clip {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        body {
+          value
+        }
+        clipTags {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        uid {
+          targetId
+          entity {
+            name
+            rpCustomerProfiles {
+              entity {
+                ... on ProfileRpCustomer {
+                  avatarImage {
+                    thumbnail: derivative(style: THUMBNAIL) {
+                      url
+                      width
+                      height
+                    }
+                    large: derivative(style: LARGE) {
+                      url
+                      width
+                      height
+                    }
+                    url
+                    width
+                    height
+                    alt
+                    title
+                  }
+                  fbProfileLink {
+                    uri
+                  }
+                  twitterProfileLink {
+                    uri
+                  }
+                  themeSelectionState
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

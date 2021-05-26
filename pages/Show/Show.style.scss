@@ -1,0 +1,33 @@
+@import 'styles/themes/theme';
+.page-show {
+  @include themify($themes) {
+    &-section {
+      background: {
+        color: themed('mainBackgroundColor');
+        position: top center;
+        repeat: no-repeat;
+        size: 100% 100%;
+      }
+    }
+    &-blink {
+      @include linear-gradient(
+        themed('detailPageGradient1'),
+        themed('detailPageGradient2')
+      );
+      position: relative;
+      div {
+        position: relative;
+      }
+      .background-mask {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      // padding: 0 5px;
+    }
+  }
+}

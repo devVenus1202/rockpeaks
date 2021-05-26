@@ -1,0 +1,22 @@
+.edit-show-modal {
+  .modal-title {
+    width: 100%;
+    .edit-on-hub {
+      color: #ff9948;
+    }
+  }
+  .prevewImage {
+    max-width: 300px;
+  }
+  .still-image {
+    max-width: 100%;
+    p {
+      line-height: 1.8;
+    }
+  }
+  .text-link {
+    border-bottom: 1px solid #b93358;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

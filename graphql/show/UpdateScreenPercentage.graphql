@@ -1,0 +1,14 @@
+mutation updateShowScreen($nid: String!, $screenPercentage: Int!) {
+  updateShow(id: $nid, screen_percentage: $screenPercentage) {
+    entity {
+      entityId
+      ... on NodeShow {
+        screenPercentage
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

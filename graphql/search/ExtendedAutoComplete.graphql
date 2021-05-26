@@ -1,0 +1,6 @@
+query AutoComplete($target_type: String!, $bundle: String!, $value: String!) {
+  extendedAutocomplete(target_type: $target_type, bundle: $bundle, string: $value) {
+    id: entityId
+    value: entityTitle
+  }
+}

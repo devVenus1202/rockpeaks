@@ -1,0 +1,15 @@
+mutation updateArtist($nid: String!, $wikiUrl: String!) {
+	updateArtist(id: $nid, artist_wikipedia_page: $wikiUrl) {
+		entity {
+			entityId
+			... on NodeArtist {
+				title
+				artistWikipediaPage
+			}
+		}
+		violations {
+			message
+		}
+		errors
+	}
+}

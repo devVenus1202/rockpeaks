@@ -1,0 +1,138 @@
+@import 'styles/themes/theme';
+
+.pagination {
+  @include themify($themes) {
+    width: 100%;
+    margin-bottom: 0px;
+    position: relative;
+    // justify-content: center;
+    .page-item {
+      margin: 0 4px;
+      transition-duration: 0.5s;
+
+      &.active {
+        .page-link {
+          color: white !important;
+          background-color: $pagination-active-bg;
+          border-color: $pagination-active-border-color;
+        }
+      }
+
+      .page-link {
+        border-radius: $border-radius;
+        text-transform: uppercase;
+        @include media-breakpoint-down(sm) {
+          padding: 0.6rem;
+        }
+        position: relative;
+        display: block;
+        text-align: center;
+        min-width: 50px;
+        padding: $pagination-padding-y $pagination-padding-x-sm;
+        margin-left: -$pagination-border-width;
+        line-height: $pagination-line-height;
+        color: themed('textMuted') !important;
+        // background-color: $pagination-bg;
+        background-color: themed('componentBackground');
+        border: $pagination-border-width solid themed('paginationBorderColor');
+        &:hover {
+          z-index: 2;
+          color: themed('main') !important;
+          text-decoration: none;
+        }
+        &:focus {
+          z-index: 2;
+          outline: $pagination-focus-outline;
+          box-shadow: $pagination-focus-box-shadow;
+        }
+        // Opinionated: add "hand" cursor to non-disabled .page-link elements
+        &:not(:disabled):not(.disabled) {
+          cursor: pointer;
+        }
+
+      }
+
+
+    }
+    & > li:first-child,
+    & > li:last-child {
+      display: none;
+    }
+  }
+}
+
+.pagination-arr {
+  position: relative;
+  top: -2px;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.laptop-pagination {
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: $border-radius;
+}
+
+.page-link {
+  &.secondary {
+    // position: relative;
+    // display: block;
+    // text-align: center;
+    // min-width: 50px;
+    // padding: $pagination-padding-y $pagination-padding-x-sm;
+    // margin-left: -$pagination-border-width;
+    // line-height: $pagination-line-height;
+    color: $pagination-color !important;
+    background-color: $secondary;
+    border: $pagination-border-width solid $secondary;
+    &:hover {
+      color: #fff;
+      border: $pagination-border-width solid #7887a2;
+      background-color: #7887a2;
+    }
+    // &:focus {
+    // outline: $pagination-focus-outline;
+    // box-shadow: $pagination-focus-box-shadow;
+    // }
+    // Opinionated: add "hand" cursor to non-disabled .page-link elements
+    // &:not(:disabled):not(.disabled) {
+    // cursor: pointer;
+    // }
+  }
+}
+
+.page-item {
+  @include themify($themes) {
+    color: $pagination-color !important;
+
+    &.active .page-link.secondary {
+      z-index: 1;
+      color: themed('mainColor');
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border-color;
+    }
+
+    &.disabled .page-link.secondary {
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      // Opinionated: remove the "hand" cursor set previously for .page-link
+      cursor: auto;
+      background-color: #3b485a;
+      border-color: #3b485a;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .page-link {
+    padding: 0.6rem 0.9rem;
+    @include rem(12);
+  }
+  .pagination .page-item {
+    margin: 0 3px;
+  }
+}

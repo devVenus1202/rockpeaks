@@ -1,0 +1,40 @@
+query albumsByArtist($nid: String) {
+  albumsByArtist: nodeQuery(
+    filter: {
+      conditions: [
+        {field: "type", value: "canonical_recording", operator: EQUAL},
+        {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      ],
+    },
+    sort: [
+      {
+        field: "album_release.entity.field_year",
+        direction: ASC,
+      }
+      {
+        field: "album_release.entity.title",
+        direction: ASC,
+      }
+    ],
+    limit: 100000,
+  ) {
+    entities {
+     	... on NodeCanonicalRecording {
+        canonicalNid: nid
+        clips: reverseCanonicalRecordingNode {
+					count
+				}
+        albumRelease {
+          entity {
+            ... on NodeAlbumRelease {
+              albumTitle: title
+              fieldYear
+              albumNid: nid
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

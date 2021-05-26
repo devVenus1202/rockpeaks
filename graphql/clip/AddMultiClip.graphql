@@ -1,0 +1,102 @@
+mutation createClip(
+  $clip_type: String!
+  $clip_production: String!
+  $single_multi: String!
+  $clip_title: String!
+  $field_day: String!
+  $field_month: String!
+  $field_year: String!
+  $artist: String!
+  $show: String!
+  $season: Int!
+  $episode: Int!
+  $clip_tags: [String!]
+  $legacy_image: String
+) {
+  createClip(
+    input: {
+      clip_type: $clip_type
+      clip_production: $clip_production
+      single_multi: $single_multi
+      clip_title: $clip_title
+      field_day: $field_day
+      field_month: $field_month
+      field_year: $field_year
+      artist: $artist
+      show: $show
+      season: $season
+      episode: $episode
+      clip_tags: $clip_tags
+      legacy_image: $legacy_image
+    }
+  ) {
+    entity {
+      entityId
+      entityLabel
+      entityUrl {
+        path
+      }
+      ... on NodeClip {
+        clipTitle
+        clipType {
+          entity {
+            entityLabel
+          }
+        }
+        clipProduction {
+          entity {
+            entityLabel
+          }
+        }
+        fieldDay
+        fieldMonth
+        fieldYear
+        singleMulti
+        season
+        episode
+        legacyImage {
+          url {
+            path
+          }
+        }
+        artist {
+          entity {
+            entityId
+            entityLabel
+            entityUrl {
+              path
+            }
+          }
+        }
+        show {
+          entity {
+            entityId
+            entityLabel
+            entityUrl {
+              path
+            }
+          }
+        }
+        clipTags {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+    errors
+    violations {
+      message
+    }
+    referenced_entities {
+      entity_id
+      entity_bundle
+      new
+      entity {
+        entityId
+        entityLabel
+      }
+    }
+  }
+}

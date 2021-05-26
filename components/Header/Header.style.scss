@@ -1,0 +1,381 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/theme';
+
+.header {
+  @include themify_class($themes) {
+    .user-info {
+      padding-left: 0px !important;
+      flex-grow: 0;
+    }
+    .navbar {
+      padding: 0 1.5rem 0 1.5rem;
+      @include media-breakpoint-down(md) {
+        padding: 0.5rem 1rem;
+      }
+      .navbar-collapse {
+        position: relative;
+        // padding-left: 4rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        .search-header {
+          display: none;
+        }
+        .search_active {
+          background: none !important;
+        }
+        .closeButton {
+          display: none !important;
+        }
+        .navbar-collapse {
+          position: relative;
+          padding-left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: white;
+      }
+      .navbar-toggler-icon {
+        height: 1em;
+        width: 1em;
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        @include trans;
+        display: block;
+        padding: 1.6rem 1.8rem;
+        position: relative;
+        text-transform: uppercase;
+        color: themed('headerColor');
+        &::before {
+          @include trans;
+          content: '';
+          display: block;
+          height: 2px;
+          width: 0;
+          background-color: transparent;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+        &:hover,
+        &:focus {
+          color: themed('headerColorHover');
+          &::before {
+            color: themed('headerColorHover');
+            background-color: $warning;
+            width: 100%;
+          }
+        }
+      }
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        &::before {
+          background-color: $warning;
+          width: 100%;
+        }
+      }
+    }
+
+    .nav-link {
+      cursor: pointer;
+    }
+
+    .btn-search-icon {
+      background: none;
+      border: none;
+      min-width: auto;
+      padding: 0.66667rem 0.8rem;
+      color: themed('headerColor');
+      div {
+        font-size: 20px;
+      }
+      &:hover,
+      &:focus,
+      &:active,
+      &:visited {
+        color: themed('headerColorHover');
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .btn-search-open {
+      display: none;
+      margin: 0 auto;
+      &.visible {
+        display: inline-block;
+
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin: 0;
+        margin-left: 15px;
+      }
+    }
+
+    .input-search-box {
+      min-height: auto;
+      padding: 0;
+      position: relative;
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        background: #000;
+        min-height: 71px;
+        padding: 13px 50px 10px 50px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+      .form-control {
+        width: 100%;
+        padding-right: 12em;
+        @include media-breakpoint-up(lg) {
+          margin: 0 auto;
+          width: 94%;
+        }
+      }
+      .dropdown {
+        border-right: 1px solid #fff;
+        margin-right: 5px;
+        padding-right: 5px;
+        @include media-breakpoint-up(xs) {
+          margin-right: 10px;
+          padding-right: 20px;
+        }
+      }
+
+      .input-search-limitation {
+        position: relative;
+        // display: flex;
+        white-space: nowrap;
+        border: 1px solid #8493a8;
+        border-radius: 0.3rem;
+        background-color: #374355;
+        .search-input {
+          border: none;
+          width: 100%;
+          margin: 0;
+          outline: none;
+          padding-right: 100px;
+        }
+      }
+      .input-search-btn-alignment {
+        display: inline-block;
+        position: absolute;
+        right: 0em;
+        top: 5px;
+
+        .dropdown-toggle {
+          text-transform: capitalize;
+          border: none;
+          min-width: auto;
+          padding: 0.3rem 0.8rem;
+          color: themed('headerColor');
+          background: themed('formControlBg');
+          border-color: transparent;
+          display: inline-block;
+          &::after {
+            border: none;
+            width: 9px;
+            height: 15px;
+            background-image: url(#{themed('iconFolder')}/Select-Arrow-Icon.svg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin-left: 0.5em;
+            vertical-align: -1px;
+          }
+          &:hover {
+            color: themed('headerColorHover');
+            background-color: themed('inputBorderColor');
+            border-color: #62738a;
+          }
+        }
+      }
+
+      // @media (max-width: 1440px) {
+      //   .input-search-btn-alignment {
+      //     right: 6.5em;
+      //   }
+      // }
+
+      .input-search-btn-alignment {
+        @include media-breakpoint-down(md) {
+          right: 3em;
+        }
+
+        @include media-breakpoint-down(xs) {
+          top: -2px;
+          right: 0em;
+        }
+      }
+      .closeButton {
+        display: inline;
+        padding: 1.7rem 100rem 1.7rem 1rem;
+        margin-left: 1px;
+      }
+      .btn-search-close {
+        border: 0px none transparent;
+        min-width: auto;
+        padding: 0.6rem 1rem;
+        background-color: transparent;
+        font-size: 1.6rem;
+        background: transparent;
+        text-decoration: none;
+        opacity: 0.5;
+        @include rem(24);
+        &:hover,
+        &:focus,
+        &:active,
+        &:visited {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .search_active {
+      visibility: visible;
+      opacity: 1;
+      min-height: 70px;
+      padding-right: 0;
+      @include trans;
+    }
+
+    .search_inactive {
+      visibility: hidden;
+      min-height: 70px;
+      opacity: 0;
+      padding-right: 0;
+      .search-header {
+        display: none;
+      }
+      @include trans;
+    }
+
+    .button_active {
+      display: block;
+    }
+
+    .button_inactive {
+      display: none;
+    }
+
+    .navbar-user {
+      cursor: pointer;
+      margin-left: 10px !important;
+      .nav-link {
+        text-transform: capitalize;
+        padding-left: 60px;
+      }
+      .user-img {
+        display: inline-block;
+        width: 100%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid $warning;
+        position: absolute;
+        left: 0;
+        bottom: 25px;
+        margin-bottom: -12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .navbar-expand-lg {
+        .navbar-nav {
+          .nav-link {
+            padding-right: 0rem;
+            padding-left: 0rem;
+            margin-right: 1.6rem;
+            margin-left: 1.6em;
+          }
+        }
+        .navbar-user {
+          .nav-link {
+            padding-left: 60px;
+          }
+        }
+      }
+    }
+
+    .btn-secondary:hover {
+      background: transparent;
+    }
+  }
+}
+
+.search-header {
+  position: fixed;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  height: 70px;
+  transition: all 0.2s ease-in-out;
+}
+.header-dark {
+  @include themify_class($themes) {
+    .navbar {
+      &:hover {
+        background: themed('headerDarkHover');
+      }
+      background: themed('headerDark');
+      @include media-breakpoint-down(md) {
+        @include linear-gradient(rgba(0, 0, 0, 1), rgba(28, 44, 70, 0));
+      }
+      .input-search-box,
+      .closeButton,
+      .search-header {
+        background-color: themed('backgroundSolid');
+        .search_active button {
+          color: themed('textColor');
+        }
+      }
+    }
+  }
+}
+
+.header-bright {
+  min-height: $header-height;
+  @include media-breakpoint-up(lg) {
+    min-height: $header-lg-height;
+  }
+  @include themify_class($themes) {
+    .navbar {
+      &:hover {
+        background: themed('headerBrightHover');
+      }
+      background: themed('headerBright');
+      .input-search-box,
+      .closeButton,
+      .search-header {
+        background: themed('headerBrightHover');
+        .search_active button {
+          color: themed('textColor');
+        }
+      }
+    }
+  }
+}

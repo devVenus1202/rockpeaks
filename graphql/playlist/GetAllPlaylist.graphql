@@ -1,0 +1,483 @@
+query getPlaylists(
+  $uid: [String]
+  $sortField: String!
+  $sortDirection: SortOrder!
+) {
+  userPlaylist: getUserSubscriptions(entity_bundles: ["playlist"]) {
+    nid
+    type
+    title
+    entity {
+      entityLabel
+      ... on NodePlaylist {
+        stillImage {
+          url {
+            path
+          }
+        }
+        clipsCount
+        clips {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              publicClipNodes {
+                targetId
+                entity {
+                  ... on NodePublicClip {
+                    title
+                    url
+                    status
+                    videoStatus
+                    removedDate {
+                      date
+                    }
+                    removedReason
+                    durationHours
+                    durationMins
+                    durationSecs
+                    inSecs
+                    inMins
+                    inHours
+                    outSecs
+                    outMins
+                    outHours
+                  }
+                }
+              }
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  sortedPlaylist: nodeQuery(
+    filter: {
+      conditions: [
+        { field: "uid", value: $uid, operator: EQUAL }
+        { field: "type", value: "playlist", operator: EQUAL }
+      ]
+    }
+    limit: 1000
+    sort: [{ field: $sortField, direction: $sortDirection }]
+  ) {
+    entities {
+      entityId
+      ... on NodePlaylist {
+        nid
+        title
+        created
+        changed
+        clipsCount
+        status
+        stillImage {
+          url {
+            path
+          }
+        }
+
+        clips {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              clipTitle
+              artist {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              show {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              fieldYear
+              fieldMonth
+              fieldDay
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              publicClipNodes {
+                targetId
+                entity {
+                  ... on NodePublicClip {
+                    title
+                    url
+                    status
+                    videoStatus
+                    removedDate {
+                      date
+                    }
+                    removedReason
+                    durationHours
+                    durationMins
+                    durationSecs
+                    inSecs
+                    inMins
+                    inHours
+                    outSecs
+                    outMins
+                    outHours
+                  }
+                }
+              }
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  watchPlaylist: flaggingQuery(
+    filter: {
+      conjunction: AND
+      conditions: [
+        { field: "flag_id", value: "watch_later" }
+        { field: "uid", value: $uid }
+      ]
+    }
+    sort: { field: "id", direction: DESC }
+    limit: 30
+  ) {
+    count
+    entities {
+      entityId
+      ... on Flagging {
+        flaggedEntity {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              clipTitle
+              artist {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              show {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              fieldYear
+              fieldMonth
+              fieldDay
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              publicClipNodes {
+                targetId
+                entity {
+                  ... on NodePublicClip {
+                    title
+                    url
+                    status
+                    videoStatus
+                    removedDate {
+                      date
+                    }
+                    removedReason
+                    durationHours
+                    durationMins
+                    durationSecs
+                    inSecs
+                    inMins
+                    inHours
+                    outSecs
+                    outMins
+                    outHours
+                  }
+                }
+              }
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  historyPlaylist: flaggingQuery(
+    filter: {
+      conjunction: AND
+      conditions: [
+        { field: "flag_id", value: "history" }
+        { field: "uid", value: $uid }
+      ]
+    }
+    sort: { field: "id", direction: DESC }
+    limit: 30
+  ) {
+    count
+    entities {
+      entityId
+      ... on Flagging {
+        flaggedEntity {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              clipTitle
+              artist {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              show {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              fieldYear
+              fieldMonth
+              fieldDay
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              publicClipNodes {
+                targetId
+                entity {
+                  ... on NodePublicClip {
+                    title
+                    url
+                    status
+                    videoStatus
+                    removedDate {
+                      date
+                    }
+                    removedReason
+                    durationHours
+                    durationMins
+                    durationSecs
+                    inSecs
+                    inMins
+                    inHours
+                    outSecs
+                    outMins
+                    outHours
+                  }
+                }
+              }
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  favouritesPlaylist: flaggingQuery(
+    filter: {
+      conjunction: AND
+      conditions: [
+        { field: "flag_id", value: "favourites" }
+        { field: "uid", value: $uid }
+      ]
+    }
+    sort: { field: "id", direction: DESC }
+    limit: 30
+  ) {
+    count
+    entities {
+      entityId
+      ... on Flagging {
+        flaggedEntity {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              clipTitle
+              artist {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              show {
+                entity {
+                  title
+                  entityId
+                }
+              }
+              fieldYear
+              fieldMonth
+              fieldDay
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              publicClipNodes {
+                targetId
+                entity {
+                  ... on NodePublicClip {
+                    title
+                    url
+                    status
+                    videoStatus
+                    removedDate {
+                      date
+                    }
+                    removedReason
+                    durationHours
+                    durationMins
+                    durationSecs
+                    inSecs
+                    inMins
+                    inHours
+                    outSecs
+                    outMins
+                    outHours
+                  }
+                }
+              }
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

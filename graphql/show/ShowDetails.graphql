@@ -1,0 +1,29 @@
+fragment showDetails on NodeShow {
+  screenPercentage
+  body {
+    processed
+    summaryProcessed
+  }
+  legacyBackgroundImage {
+    url {
+      path
+    }
+  }
+  showBackgroundImage {
+    url
+  }
+  legacyImage {
+    uri
+  }
+  screenPercentage
+}
+query showDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ...showDetails
+  }
+}

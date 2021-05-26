@@ -1,0 +1,13 @@
+.alert {
+  .close {
+    margin: 0 !important;
+    outline: none;
+  }
+  .navbar-nav {
+    .nav-link {
+      padding: 0;
+      cursor: pointer;
+      display: inline;
+    }
+  }
+}

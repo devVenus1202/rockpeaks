@@ -1,0 +1,78 @@
+@import 'styles/themes/theme';
+
+.total-information {
+  @include themify($themes) {
+    align-items: center;
+    max-width: 300px;
+    font-size: 0;
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    &-cell {
+      @include rem(14);
+      display: inline-block;
+      color: themed('secondaryNavColor');
+      padding: 5px 5px;
+      overflow: hidden;
+      position: relative;
+      white-space: nowrap;
+      width: 49%;
+      text-align: center;
+      text-transform: capitalize;
+      float: left;
+
+      @include media-breakpoint-down(md) {
+        float: inherit;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 70%;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &:nth-child(1) {
+        border: 1px solid transparent;
+        border-bottom-color: themed('secondary');
+        border-right-color: themed('secondary');
+        @include media-breakpoint-down(sm) {
+          border: 1px solid themed('secondary');
+          border-bottom-color: transparent;
+        }
+      }
+
+      &:nth-child(2) {
+        border: 1px solid transparent;
+        border-bottom-color: themed('secondary');
+        @include media-breakpoint-down(sm) {
+          border: 1px solid themed('secondary');
+          border-bottom-color: transparent;
+        }
+      }
+
+      &:nth-child(3) {
+        border: 1px solid transparent;
+        border-right-color: themed('secondary');
+        @include media-breakpoint-down(sm) {
+          border: 1px solid themed('secondary');
+          border-bottom-color: transparent;
+        }
+      }
+
+      &:nth-child(4) {
+        border: 1px solid transparent;
+        @include media-breakpoint-down(sm) {
+          border: 1px solid $secondary;
+        }
+      }
+    }
+  }
+}

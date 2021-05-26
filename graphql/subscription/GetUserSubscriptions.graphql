@@ -1,0 +1,7 @@
+query getSubscriptions($type: [String]) {
+  getUserSubscriptions(entity_bundles: $type) {
+    nid
+    type
+    title
+  }
+}

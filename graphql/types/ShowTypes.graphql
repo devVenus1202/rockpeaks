@@ -1,0 +1,12 @@
+query showTypes($filter: EntityQueryFilterInput) {
+  taxonomyTermQuery(filter: $filter, limit: 1000) {
+    entities {
+      entityId
+      ... on TaxonomyTermShowType {
+        tid
+        name
+      }
+    }
+    count
+  }
+}

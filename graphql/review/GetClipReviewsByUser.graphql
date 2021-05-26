@@ -1,0 +1,73 @@
+query clipReviews(
+  $filter: EntityQueryFilterInput
+  $limit: Int
+  $offset: Int
+  $sort: [EntityQuerySortInput]
+) {
+  nodeQuery(filter: $filter, limit: $limit, offset: $offset, sort: $sort) {
+    entities {
+      entityId
+      ... on NodeReview {
+        nid
+        title
+        created
+        clip {
+          entity {
+            entityId
+            entityLabel
+            title
+            created
+            ... on NodeClip {
+              entityId
+              clipTitle
+              artist {
+                entity {
+                  entityId
+                  title
+                }
+              }
+              show {
+                entity {
+                  entityId
+                  title
+                }
+              }
+              fieldYear
+              fieldMonth
+              fieldDay
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+            }
+          }
+        }
+        body {
+          value
+          processed
+        }
+        clipTags {
+          entity {
+            entityLabel
+          }
+        }
+      }
+    }
+  }
+}

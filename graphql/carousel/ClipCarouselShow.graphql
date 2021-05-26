@@ -1,0 +1,86 @@
+query ClipCarouselShow(
+  $nid: String!
+  $offset: Int
+  $limit: Int
+  $filter: EntityQueryFilterInput
+  $sort: [EntityQuerySortInput]
+) {
+  nodeById(id: $nid) {
+    nid
+    reverse: reverseShowNode(
+      limit: $limit
+      offset: $offset
+      sort: $sort
+      filter: $filter
+    ) {
+      count
+      entities {
+        entityId
+        entityCreated
+        entityUrl {
+          path
+        }
+        ... on NodeClip {
+          nid
+          fieldDay
+          fieldMonth
+          fieldYear
+          clipTitle
+          legacyImageMedium {
+            url {
+              path
+            }
+          }
+          fieldStillImage {
+            url
+          }
+          legacyImage {
+            url {
+              path
+            }
+          }
+          legacyImageLarge {
+            url {
+              path
+            }
+          }
+          legacyImageSmall {
+            url {
+              path
+            }
+          }
+          legacyImageMedium {
+            url {
+              path
+            }
+          }
+          smartStillImage {
+            uri
+          }
+          smartStillImage320x480 {
+            uri
+          }
+          smartStillImage640x480 {
+            uri
+          }
+          smartStillImage1280x720 {
+            uri
+          }
+          artist {
+            targetId
+            entity {
+              nid
+              entityLabel
+            }
+          }
+          show {
+            entity {
+              nid
+              entityLabel
+            }
+          }
+        }
+      }
+    }
+  }
+}

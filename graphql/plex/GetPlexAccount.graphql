@@ -1,0 +1,43 @@
+query getPlexAccount {
+  getPlexAccount {
+    message
+    plexAccount {
+      id
+      uuid
+      email
+      username
+      title
+      thumb
+      authToken
+      clientId
+      sections {
+        key
+        uuid
+        type
+        title
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+      selected_sections {
+        key
+        type
+        title
+        uuid
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+    }
+    user {
+      entityId
+      entityLabel
+    }
+  }
+}

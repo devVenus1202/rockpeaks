@@ -1,0 +1,27 @@
+query discsDropdown($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter, limit: 999, sort: {field: "title", direction: ASC }) {
+    count
+    entities {
+      entityId
+      ... on NodeDisc {
+        body {
+          processed
+          value
+        }
+        clips {
+          entity {
+            status
+          }
+        }
+        clipsCountTotal
+        clipsCountActive
+        title
+        legacyImage {
+          url {
+            path
+          }
+        }
+      }
+    }
+  }
+}

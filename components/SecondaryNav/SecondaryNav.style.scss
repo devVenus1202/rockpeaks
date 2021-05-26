@@ -1,0 +1,390 @@
+@import 'styles/themes/theme';
+/*
+ * Theme definitions
+ */
+.secondary-navbar-style {
+  @include themify($themes) {
+    @include trans;
+    // color: $text-grey;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+    &.navbar {
+      background-color: themed('secondaryNavBg'); //rgba(39, 45, 55, 0.65);
+      @include trans;
+
+      &:hover {
+        background-color: themed('secondaryNavHoverBg'); //rgba(39, 45, 55, 1);
+      }
+
+      justify-content: start;
+      padding: 0 1rem 0 22px;
+      // margin: {
+      //   left: -5px;
+      //   right: -5px;
+      // }
+      .navbar-brand {
+        border-right: 1px solid transparent;
+        color: inherit;
+        display: block;
+        padding: 25px 25px 25px 0;
+        text-decoration: none;
+        width: auto;
+      }
+
+      .push {
+        margin-left: auto;
+      }
+
+      .dropdown {
+        .dropdown-toggle {
+          color: themed('textColorEmphorsized'); // $text-grey;
+          padding: 25px;
+          svg {
+            margin-right: 5px;
+            margin-left: 5px;
+          }
+          &:hover {
+            background-color: themed('componentBackground') !important;
+            color: themed('mainColor');
+            svg {
+              path {
+                fill: themed('secondaryNavHoverColor') !important;
+              }
+            }
+          }
+          &::after {
+            content: none;
+          }
+        }
+        // &.show {
+        //   .dropdown-toggle {
+        //     background-color: themed('componentBackground');
+        //   }
+        // }
+        &.show {
+          .dropdown-toggle {
+            background-color: themed('componentBackground');
+            &.fadeout:not(:hover) {
+              transition: visibility 0.5s;
+              -webkit-transition: visibility 0.5s;
+              -webkit-animation-name: fadeOutMenu; /* Safari 4.0 - 8.0 */
+              -webkit-animation-duration: 500ms; /* Safari 4.0 - 8.0 */
+              -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+              animation-name: fadeOutMenu;
+              animation-duration: 500ms;
+              animation-delay: 0s;
+            }
+          }
+        }
+        .nav-tabs {
+          background: themed(
+            'componentBackgroundSecondary'
+          ); //$component-bg-secondary;
+          flex-wrap: nowrap;
+          margin-bottom: 0;
+          .nav-item {
+            display: block;
+          }
+          .nav-link {
+            padding: 1rem 0;
+            margin: 0 2.15rem;
+          }
+        }
+      }
+      .tree-container {
+        max-height: 550px;
+        overflow-y: auto;
+      }
+      .dropdown-menu {
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: $box-shadow-sm !important;
+        width: 450px;
+        // -webkit-animation-name: fadeOutUpDd;  Safari 4.0 - 8.0
+        // -webkit-animation-duration: 500ms;  Safari 4.0 - 8.0
+        // -webkit-animation-delay: 0s;  Safari 4.0 - 8.0
+        // animation-name: fadeOutUpDd;
+        // animation-duration: 500ms;
+        &.show {
+          transition: visibility 0.5s;
+          -webkit-transition: visibility 0.5s;
+          -webkit-animation-name: fadeInDownDd; /* Safari 4.0 - 8.0 */
+          -webkit-animation-duration: 500ms; /* Safari 4.0 - 8.0 */
+          -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+          animation-name: fadeInDownDd;
+          animation-duration: 500ms;
+          animation-delay: 0s;
+        }
+        &.fadeout {
+          transition: visibility 0.5s;
+          -webkit-transition: visibility 0.5s;
+          -webkit-animation-name: fadeOutUpDd; /* Safari 4.0 - 8.0 */
+          -webkit-animation-duration: 500ms; /* Safari 4.0 - 8.0 */
+          -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+          animation-name: fadeOutUpDd;
+          animation-duration: 500ms;
+          animation-delay: 0s;
+        }
+      }
+
+      ul.nav {
+        > li {
+          @include rem(14);
+          display: inline-block;
+          border: none;
+          outline: none;
+
+          .btn {
+            min-width: 0;
+          }
+          .btn-secondary {
+            background: none;
+            padding: 25px;
+          }
+        }
+      }
+
+      .btn-outline-light {
+        border: 0px none;
+        box-shadow: none;
+        padding: 0;
+        svg {
+          height: 20px;
+          width: 20px;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          background: none;
+          svg {
+            path {
+              fill: themed('secondaryNavHoverColor') !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .navbar {
+//   background-color: #fff;
+// }
+.dropdown-discs-menu {
+  border: 0px none !important;
+  border-radius: 0 !important;
+  margin-top: 0px !important;
+  min-width: 18em !important;
+  max-height: 600px;
+
+  .dropdown-item {
+    padding: 0;
+    white-space: normal;
+  }
+  a {
+    color: inherit;
+  }
+  @include media-breakpoint-up(sm) {
+    min-width: 22em !important;
+  }
+  @include media-breakpoint-up(md) {
+    min-width: 45em !important;
+  }
+  @include media-breakpoint-up(lg) {
+    min-width: 55em !important;
+  }
+}
+
+.dropdown-discs-card {
+  @include themify($themes) {
+    border-bottom: 1px solid #4c5d76;
+    color: themed('mainColor'); //#fff;
+    &-header {
+      position: relative;
+      padding: 10px 50px 10px 15px;
+      @include media-breakpoint-up(md) {
+        padding: 20px 65px 10px 30px;
+      }
+    }
+    &-body {
+      padding: 15px;
+      @include media-breakpoint-up(md) {
+        padding: 10px 15px 20px 30px;
+      }
+    }
+    &-image {
+      width: 100%;
+      max-width: 130px;
+      border-radius: $border-radius;
+      @include media-breakpoint-up(md) {
+        max-width: 200px;
+      }
+      &-link {
+        display: inline-block;
+      }
+    }
+    &:hover,
+    &:focus {
+      background-color: themed('menuItemBg'); //#334155;
+    }
+    .btn-add-to-playlist {
+      min-width: auto;
+      position: absolute;
+      padding: 0.6rem;
+      right: 0;
+      top: 14px;
+      @include media-breakpoint-up(md) {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.dropdown-clips-menu {
+  border: 0px none !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  max-height: 600px !important;
+  min-width: 20em;
+  max-width: 280px;
+
+  .dropdown-item {
+    padding: 0;
+    white-space: normal;
+  }
+  a {
+    color: inherit;
+  }
+  @include media-breakpoint-up(sm) {
+    max-width: 546px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 738px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: none;
+  }
+}
+
+.nav-tooltip {
+  padding: 8px 10px;
+}
+
+// .nav-tooltip .bs-tooltip-bottom .arrow::before,
+// .bs-tooltip-auto[x-placement^='bottom'] .arrow::before {
+//   bottom: 0;
+//   border-width: 0 0.4rem 0.4rem;
+//   border-bottom-color: #4c5d76;
+// }
+.tooltip-inner {
+  background: #4c5d76 !important;
+}
+.bs-tooltip-right .arrow::before {
+  border-right-color: #4c5d76 !important;
+}
+
+.secondary-nav-tooltip .tooltip-inner,
+.disc-list-row .tooltip-inner {
+  background: #4c5d76 !important;
+}
+.secondary-nav-tooltip .arrow::before {
+  border-bottom-color: #4c5d76 !important;
+}
+
+.tree-nav-bar {
+  .nav-item {
+    .nav-link {
+      padding: 0.75rem 0 0.65rem 0 !important;
+    }
+  }
+}
+
+.album-round-disc-icon {
+  margin-top: -1px;
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.alert-login {
+  display: flex;
+  .login-link {
+    text-decoration: underline;
+  }
+}
+
+.track-modal {
+  max-width: 370px !important;
+}
+
+@-webkit-keyframes fadeInDownDd {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDownDd {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutUpDd {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutUpDd {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutMenu {
+  0% {
+    background-color: inherit;
+    opacity: 1;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes fadeOutMenu {
+  0% {
+    background-color: inherit;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}

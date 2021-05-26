@@ -1,0 +1,118 @@
+query yearsByArtist(
+  $nid: String,
+  $year0: String,
+  $year1: String,
+  $year2: String,
+  $year3: String,
+  $year4: String,
+  $year5: String,
+  $year6: String,
+  $year7: String,
+  $year8: String,
+  $year9: String,
+) {
+  decade: nodeQuery(
+    limit: 1,
+    filter: {
+      conditions: [
+        {field: "type", value: "clip", operator: EQUAL},
+        {field: "field_year", operator: EQUAL, value: [$year0]}
+      ]}) {
+    entities {
+      ... on NodeClip {
+        fieldYear
+      }
+    }
+  }
+  year0: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year0]}
+    ]}
+  ) {
+    count
+  }
+  year1: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year1]}
+    ]}
+  ) {
+    count
+  }
+  year2: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year2]}
+    ]}
+  ) {
+    count
+  }
+  year3: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year3]}
+    ]}
+  ) {
+    count
+  }
+  year4: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year4]}
+    ]}
+  ) {
+    count
+  }
+  year5: nodeQuery(filter: {
+    conditions: [
+      
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year5]}
+    ]}
+  ) {
+    count
+  }
+  year6: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year6]}
+    ]}
+  ) {
+    count
+  }
+  year7: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year7]}
+    ]}
+  ) {
+    count
+  }
+  year8: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year8]}
+    ]}
+  ) {
+    count
+  }
+  year9: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: EQUAL, value: [$year9]}
+    ]}
+  ) {
+    count
+  }
+}

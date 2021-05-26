@@ -1,0 +1,29 @@
+# Rockpeaks.com deployment pipeline
+# validate at https://bitbucket-pipelines.prod.public.atl-paas.net/validator
+# https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html#Configurebitbucket-pipelines.yml-ci_branches
+#branches: '{develop, production, staging, deployworkflow}':
+
+options:
+  docker: true
+  size: 2x
+
+pipelines:
+  branches:
+    "{development,production,staging}":
+      - step:
+          name: Build docker image
+          image: atlassian/pipelines-awscli:latest
+          script:
+            - export ECS_TASK_FAMILY_NAME=${ECS_TASK_FAMILY_NAME_PREFIX}-${BITBUCKET_BRANCH}
+            - export ECS_SERVICE_NAME=${ECS_SERVICE_NAME_PREFIX}-${BITBUCKET_BRANCH}
+            - export REGISTRY_FULL_NAME=${AWS_REGISTRY_URL}:${BITBUCKET_BRANCH}-${BITBUCKET_BUILD_NUMBER}
+            - deploy/build-repo.sh
+      - step:
+          name: Update ECS task and service
+          image: atlassian/pipelines-awscli:latest
+          script:
+            - deploy/update-service-${BITBUCKET_BRANCH}.sh
+definitions:
+  services:
+    docker:
+      memory: 7168 # 8192 # 4096

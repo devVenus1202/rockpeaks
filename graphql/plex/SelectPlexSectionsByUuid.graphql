@@ -1,0 +1,42 @@
+mutation selectPlexSectionsByUuid($sections: [String!]!) {
+  selectPlexSectionsByUuid(sections: $sections) {
+    message
+    plexAccount {
+      id
+      uuid
+      email
+      username
+      title
+      thumb
+      authToken
+      sections {
+        key
+        uuid
+        type
+        title
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+      selected_sections {
+        key
+        uuid
+        type
+        title
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+    }
+    user {
+      entityId
+      entityLabel
+    }
+  }
+}

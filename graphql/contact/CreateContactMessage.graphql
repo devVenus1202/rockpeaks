@@ -1,0 +1,18 @@
+mutation createContactMessage ($name: String!, $mail: String!, $subject: String!, $message: String!) {
+  createContactMessage(input: {
+    name: $name,
+    mail: $mail,
+    subject: $subject,
+    message: $message
+  }) {
+    errors,
+    violations {
+      code,
+      message
+    },
+    status {
+      code,
+      message
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import 'styles/themes/theme';
+.page-artist {
+  @include themify_class($themes) {
+    .page-artist-section {
+      background: {
+        color: themed('detailPageBackground'); // #272d37;
+        position: top center;
+        repeat: no-repeat;
+        size: cover;
+      }
+    }
+    .page-artist-blink {
+      @include linear-gradient(
+        themed('detailPageGradient1'),
+        themed('detailPageGradient2')
+      );
+      position: relative;
+      div {
+        position: relative;
+      }
+      .background-mask {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      // padding: 0 5px;
+    }
+
+    .body-summary {
+      p {
+        word-break: break-word;
+      }
+    }
+  }
+}

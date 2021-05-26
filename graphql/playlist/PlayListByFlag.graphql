@@ -1,0 +1,22 @@
+query getUserHistoryPlaylist($uid: [String], $flag: [String]) {
+  flaggingQuery(
+    filter: {
+      conjunction: AND
+      conditions: [{ field: "flag_id", value: $flag }, { field: "uid", value: $uid }]
+    }
+    sort: { field: "id", direction: DESC }
+    limit: 30
+  ) {
+    entities {
+      entityId
+      ... on Flagging {
+        flaggedEntity {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+  }
+}

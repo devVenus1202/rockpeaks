@@ -1,0 +1,10 @@
+mutation {
+  discourseLogout {
+    message
+    user {
+      uid
+      name
+    }
+    error
+  }
+}

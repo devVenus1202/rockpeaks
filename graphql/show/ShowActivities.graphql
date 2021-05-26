@@ -1,0 +1,69 @@
+query GetShowActivities(
+  $showId: Int!
+  $bundles: [String!]
+  $offset: Int!
+  $limit: Int!
+) {
+  getShowsActivities(
+    show_id: $showId
+    bundles: $bundles
+    offset: $offset
+    limit: $limit
+  ) {
+    action
+    datetime
+    entity {
+      entityId
+      entityBundle
+      entityLabel
+      ... on NodePublicClip {
+        publicClipId: entityId
+        clipTitle
+        reversePublicClipNodesNode {
+          entities {
+            entityId
+            ... on NodeClip {
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              show {
+                entity {
+                  entityId
+                  title
+                }
+              }
+              artist {
+                entity {
+                  entityId
+                  title
+                }
+              }
+            }
+          }
+        }
+      }
+      ... on NodeClip {
+        clipTitle
+        legacyImage {
+          url {
+            path
+          }
+        }
+        show {
+          entity {
+            entityId
+            title
+          }
+        }
+        artist {
+          entity {
+            entityId
+            title
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+query getClipTypeQuery($name: String!) {
+  getClipType(name: $name)
+}

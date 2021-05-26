@@ -1,0 +1,11 @@
+mutation($entityId: String!) {
+  removeFromFavourites(entity_id: $entityId) {
+    errors
+    violations {
+      message
+    }
+    entity {
+      entityId
+    }
+  }
+}

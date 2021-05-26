@@ -1,0 +1,81 @@
+query getClips($targetId: String!) {
+  nodeById(id: $targetId) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ... on NodePlaylist {
+      clipsCount
+      stillImage {
+        url {
+          path
+        }
+      }
+      clips {
+        entity {
+          entityId
+          entityLabel
+          title
+          ... on NodeClip {
+            legacyImage {
+              url {
+                path
+              }
+            }
+            fieldStillImage {
+              url
+            }
+            smartStillImage {
+              uri
+            }
+            smartStillImage320x480 {
+              uri
+            }
+            smartStillImage640x480 {
+              uri
+            }
+            smartStillImage1280x720 {
+              uri
+            }
+            publicClipNodes {
+              targetId
+              entity {
+                ... on NodePublicClip {
+                  title
+                  url
+                  durationHours
+                  durationMins
+                  durationSecs
+                  inSecs
+                  inMins
+                  inHours
+                  outSecs
+                  outMins
+                  outHours
+                  status
+                  videoStatus
+                  removedDate {
+                    date
+                  }
+                  removedReason
+                }
+              }
+            }
+            archiveClipNodes {
+              entity {
+                ... on NodeArchiveClip {
+                  nid
+                  title
+                  status
+                  metadataStatus
+                  VTT
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+query songsByArtist (
+  $nid: String
+) {
+  songsByArtist: nodeQuery(
+    limit: 1000000,
+    sort: [
+      {
+        field: "clip_title",
+        direction: ASC,
+      }
+    ],
+    filter: {
+      conditions: [
+        {field: "type", value: "clip", operator: EQUAL},
+        {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+      ]
+    }
+  ) {
+    entities {
+      ... on NodeClip {
+        clipTitle
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import 'styles/themes/theme';
+.body-summary {
+  @include themify($themes) {
+    .collapsed {
+      max-height: 5.5rem;
+      overflow-y: hidden;
+      transition: max-height 1s;
+    }
+    .expanded {
+      max-height: 20rem;
+      overflow-y: scroll;
+      transition: max-height 1s;
+    }
+    .btn {
+      font-size: 0.8rem;
+      min-width: 4.5rem;
+    }
+    .text-muted {
+      line-height: 1.8rem;
+      color: themed('textMuted') !important;
+    }
+  }
+}

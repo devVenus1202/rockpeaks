@@ -1,0 +1,33 @@
+.new-playlist {
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 500ms; /* Safari 4.0 - 8.0 */
+  -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+}
+
+.added-playlist {
+  // border: 1px solid #8e8e8e;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0% {
+    font-size: 1.2em;
+  }
+
+  100% {
+    font-size: 1em;
+  }
+}
+
+/* Standard syntax */
+@keyframes example {
+  0% {
+    font-size: 1.2em;
+  }
+
+  100% {
+    font-size: 1em;
+  }
+}

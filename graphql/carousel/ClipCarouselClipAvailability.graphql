@@ -1,0 +1,22 @@
+query ClipCarouselClipAvailability($nid: String!) {
+  all: nodeById(id: $nid) {
+    reverse: reverseClipsNode(filter:{conditions: [{field: "status", value: "1", operator: EQUAL}]}) {
+      count
+    }
+  }
+  livePerformance: nodeById(id: $nid) {
+    reverse: reverseClipsNode(filter: {conditions: [{field: "clip_type", value: ["54"], operator: EQUAL}, {field: "status", value: "1", operator: EQUAL}]}) {
+      count
+    }
+  }
+  promoVideos: nodeById(id: $nid) {
+    reverse: reverseClipsNode(filter: {conditions: [{field: "clip_type", value: ["64"], operator: EQUAL}, {field: "status", value: "1", operator: EQUAL}]}) {
+      count
+    }
+  }
+  interviewsDocs: nodeById(id: $nid) {
+    reverse: reverseClipsNode(filter: {conditions: [{field: "clip_type", value: ["53","48"], operator: IN}, {field: "status", value: "1", operator: EQUAL}]}) {
+      count
+    }
+  }
+}

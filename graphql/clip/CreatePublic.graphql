@@ -1,0 +1,20 @@
+mutation createPublicClip($parent_clip: Int!, $clip_title: String!, $url: String) {
+	createPublicClip(input: { parent_clip: $parent_clip, clip_title: $clip_title, url: $url }) {
+		entity {
+			entityId
+			entityLabel
+			... on NodePublicClip {
+				parentClip {
+					entity {
+						entityId
+						entityLabel
+					}
+				}
+			}
+		}
+		violations {
+			message
+		}
+		errors
+	}
+}

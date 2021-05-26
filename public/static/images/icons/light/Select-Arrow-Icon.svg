@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="15px" viewBox="0 0 9 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Arrows Dark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Input-2" transform="translate(-127.000000, -15.000000)" fill="#CEC6BF">
+            <g id="Arrows-Dark" transform="translate(127.000000, 15.000000)">
+                <g id="Arrows-Light">
+                    <polygon id="Arrow-Icon" points="4.5 0 9 5 0 5"></polygon>
+                <polygon id="Arrow-Icon" points="4.5 15 9 10 0 10"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,93 @@
+@import 'styles/themes/theme';
+
+.footer {
+  @include themify($themes) {
+    background-color: themed('componentBackground');
+    &-top {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+    &-bottom {
+      text-align: center;
+      padding: 15px 0;
+      border-top: 1px solid themed('borderColor');
+    }
+    a {
+      color: themed('textColor');
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: themed('textColor');
+    }
+
+    .list-inline {
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+.social-list {
+  li {
+    border-radius: 50%;
+    &:hover a {
+      transform: rotateY(360deg);
+    }
+  }
+  a {
+    background-color: #b9c5d7;
+    border-radius: 50%;
+    display: inline-block;
+    height: 32px;
+    padding: 2px 0;
+    transition: all 0.4s ease-in-out;
+    width: 32px;
+    svg {
+      path {
+        fill: #3e4d64;
+      }
+    }
+  }
+  .list-inline-item:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.copyright {
+  @include rem(12);
+  color: $secondary;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.footer-logo {
+  @include themify($themes) {
+    display: inline-block;
+    margin-bottom: 3.5rem;
+    .logo-image {
+      background-image: url(themed('logoURL'));
+      background-size: contain;
+      width: 107px;
+      height: 20px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .footer {
+    .list-inline {
+      margin-bottom: 0 !important;
+    }
+    .list-inline-item {
+      margin-bottom: 2rem;
+      margin-right: 0 !important;
+      display: block;
+    }
+  }
+  .social-list {
+    .list-inline-item {
+      display: inline-block;
+      margin: 20px 10px 0px 10px;
+    }
+  }
+}

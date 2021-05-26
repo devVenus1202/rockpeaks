@@ -1,0 +1,27 @@
+@import 'styles/themes/theme';
+
+.card {
+  @include themify($themes) {
+    color: themed('textMuted');
+    background-color: themed('componentBackground');
+    border: none;
+    border-radius: 1px;
+    .card-header {
+      color: themed('textMuted');
+      background-color: themed('componentBackground');
+      border: none;
+      padding: 1.2rem 3rem;
+      cursor: pointer;
+    }
+    .card-body {
+      padding: 1.2rem 3rem;
+    }
+    &.expend {
+      .card-header {
+        background-color: themed('componentBackgroundSecondary');
+      }
+      background-color: themed('componentBackgroundSecondary');
+      border-left: 2px solid #ff9948;
+    }
+  }
+}

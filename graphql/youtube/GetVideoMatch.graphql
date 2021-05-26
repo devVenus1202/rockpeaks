@@ -1,0 +1,11 @@
+query getVideoMatch($url: String!) {
+  youtubeGetMatch(url: $url) {
+    entity {
+      entityId
+      entityUrl {
+        path
+      }
+      entityLabel
+    }
+  }
+}

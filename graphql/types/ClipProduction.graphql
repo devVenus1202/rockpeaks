@@ -1,0 +1,12 @@
+query clipProduction($filter: EntityQueryFilterInput) {
+  taxonomyTermQuery(filter: $filter, limit: 1000) {
+    entities {
+      entityId
+      ... on TaxonomyTermClipProduction {
+        tid
+        name
+      }
+    }
+    count
+  }
+}

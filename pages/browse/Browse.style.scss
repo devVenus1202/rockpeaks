@@ -1,0 +1,16 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import 'styles/themes/dark/variables';
+
+.browse-page {
+  .main {
+    padding: 0px 8px;
+  }
+  .fixed-col {
+    width: 100%;
+  }
+  @include media-breakpoint-up(lg) {
+    .fixed-col {
+      width: 320px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mutation CreateClipReview($title: String, $clip: String!, $body: String!, $clip_tags: [String!]) {
+  createClipReview(input: { title: $title, clip: $clip, body: $body, clip_tags: $clip_tags }) {
+    entity {
+      entityId
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

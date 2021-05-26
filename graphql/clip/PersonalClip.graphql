@@ -1,0 +1,36 @@
+fragment clipDetailsPersonalClip on NodePersonalClip {
+  body {
+    processed
+    summaryProcessed
+  }
+  entityId
+  title
+  status
+  durationMins
+  sectionKey
+  key
+  entityUrl {
+    path
+  }
+  durationHours
+  bitrate
+  clipTitle
+  durationHours
+  durationMins
+  durationSecs
+  videoStatus
+  bitrate
+  widthAndHeight
+  verticalResolution
+}
+
+query personalClipDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ...clipDetailsPersonalClip
+  }
+}

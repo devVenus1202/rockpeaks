@@ -1,0 +1,113 @@
+query discDetails($nid: String!) {
+  nodeById(id: $nid) {
+    ... on NodeDisc {
+      nid
+      title
+      body {
+        processed
+      }
+      discType {
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+      isMasterDisc
+      discArtwork {
+        url
+      }
+      blurredArtworkImage {
+        url {
+          path
+        }
+      }
+      legacyImage {
+        url {
+          path
+        }
+      }
+      created
+      changed
+      status
+      clips {
+        entity {
+          entityId
+          entityLabel
+          ... on NodeClip {
+            publicClipNodes {
+              targetId
+              entity {
+                ... on NodePublicClip {
+                  title
+                  url
+                  status
+                  videoStatus
+                  removedDate {
+                    date
+                  }
+                  removedReason
+                  durationHours
+                  durationMins
+                  durationSecs
+                  inSecs
+                  inMins
+                  inHours
+                  outSecs
+                  outMins
+                  outHours
+                }
+              }
+            }
+            archiveClipNodes {
+              entity {
+                ... on NodeArchiveClip {
+                  nid
+                  title
+                  status
+                  metadataStatus
+                  VTT
+                }
+              }
+            }
+            legacyImage {
+              url {
+                path
+              }
+            }
+            fieldStillImage {
+              url
+            }
+            smartStillImage {
+              uri
+            }
+            smartStillImage320x480 {
+              uri
+            }
+            smartStillImage640x480 {
+              uri
+            }
+            smartStillImage1280x720 {
+              uri
+            }
+            clipTitle
+            fieldYear
+            fieldMonth
+            fieldDay
+            artist {
+              entity {
+                entityId
+                entityLabel
+              }
+            }
+            show {
+              entity {
+                entityId
+                entityLabel
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

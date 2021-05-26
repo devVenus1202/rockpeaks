@@ -1,0 +1,11 @@
+mutation deletePlaylist($id: String!) {
+  deletePlaylist(id: $id) {
+    entity {
+      entityId
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

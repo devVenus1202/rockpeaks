@@ -1,0 +1,9 @@
+@import 'styles/themes/theme';
+
+.tab-pane {
+  @include themify($themes) {
+    .text-white {
+      color: themed('textColor') !important;
+    }
+  }
+}

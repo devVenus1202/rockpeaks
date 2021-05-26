@@ -1,0 +1,29 @@
+fragment artistDetails on NodeArtist {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyPublicityImage {
+    uri
+  }
+  artistPublicityImage {
+    url
+  }
+  totalClips: reverseShowNode(filter: {}) {
+    count
+  }
+  activeClips: reverseShowNode(filter: {conditions: [{field: "status", value: "1", operator: EQUAL}]}) {
+    count
+  }
+}
+
+query discContents($filter: EntityQueryFilterInput, $limit: Int, $offset: Int) {
+  nodeQuery(filter: $filter, limit: $limit, offset: $offset) {
+    entities {
+      entityId
+      ...artistDetails
+    }
+    count
+  }
+}

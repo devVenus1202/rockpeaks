@@ -1,0 +1,297 @@
+@import '../themes/theme.scss';
+
+body {
+  font-weight: 300;
+}
+
+.fw200 {
+  font-weight: 200 !important;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.fw400 {
+  font-weight: 400 !important;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.fw800 {
+  font-weight: 800 !important;
+}
+
+.fw900 {
+  font-weight: 900 !important;
+}
+
+h1,
+.h1 {
+  margin-bottom: 0.4em;
+}
+
+h2,
+.h2 {
+  margin-bottom: 0.4em;
+  &.smaller {
+    @include rem(30);
+  }
+}
+
+h3,
+.h3 {
+  margin-bottom: 0.4em;
+}
+
+h4,
+.h4 {
+  margin-bottom: 0.4em;
+}
+
+h5,
+.h5 {
+  margin-bottom: 0.4em;
+}
+
+h6,
+.h6 {
+  margin-bottom: 0.4em;
+}
+
+::selection {
+  background-color: $warning;
+  color: white;
+}
+
+.table-parent-md {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.img-full-width {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+hr {
+  border: none;
+  background-color: #54657e;
+  width: 100%;
+  height: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p,
+address,
+ol,
+ul,
+dl,
+blockquote {
+  margin-bottom: 0.4em;
+}
+
+address {
+  font-style: normal;
+}
+
+.callout {
+  border: none;
+  border-radius: 0;
+  a {
+    color: inherit;
+  }
+}
+
+.badge,
+.label {
+  margin-bottom: 4px;
+  &.success,
+  &.primary,
+  &.warning,
+  &.alert {
+    color: white;
+  }
+}
+
+hr {
+  border: none;
+  background-color: $modal-border-color;
+  width: 100%;
+  height: 1px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section {
+  padding: 30px 0;
+}
+
+.sub-section {
+  margin-bottom: 30px;
+}
+
+.content-box {
+  @include themify($themes) {
+    background-color: themed('componentBackground');
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: $border-radius;
+    // min-height: 830px;
+
+    @include media-breakpoint-down(md) {
+      min-height: auto;
+    }
+  }
+}
+
+.content-scroll-box {
+  max-height: 766px;
+  position: relative;
+  overflow-y: scroll;
+  z-index: 5;
+  @include media-breakpoint-down(lg) {
+    max-height: 100%;
+  }
+  @include media-breakpoint-down(lg) {
+    overflow-y: visible;
+  }
+  &.no-scroll {
+    overflow: hidden;
+    max-height: 100%;
+  }
+}
+
+// line-height
+.l-height-4px {
+  line-height: 4px;
+}
+
+.l-height-10px {
+  line-height: 10px;
+}
+
+// padding
+.pt-2rem {
+  padding-top: 2rem !important;
+}
+
+.pt-3rem {
+  padding-top: 3rem !important;
+}
+
+.p-y-2rem {
+  padding: 2rem 0;
+}
+
+.p-2rem {
+  padding: 2rem;
+}
+
+// margin
+.mb-2rem {
+  margin-bottom: 2rem !important;
+}
+
+.mb-2-5rem {
+  margin-bottom: 2.5rem !important;
+}
+
+.mb-4rem {
+  margin-bottom: 4rem !important;
+}
+
+.mb-8rem {
+  margin-bottom: 8rem !important;
+}
+
+.text-shadow-1 {
+  @include themify($themes) {
+    text-shadow: 0px 0px 3px themed('mainBackgroundColor');
+  }
+}
+
+.text-grey-light {
+  color: $text-grey-light !important;
+}
+
+.narrow-container {
+  max-width: 900px;
+
+  &.all-width {
+    max-width: 100%;
+  }
+
+  &.smaller-width {
+    max-width: 525px;
+  }
+}
+
+.icon-link {
+  display: inline-block;
+  img {
+    opacity: 0.7;
+  }
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    @include rem(32);
+  }
+  h2 {
+    @include rem(28);
+  }
+  h3 {
+    @include rem(24);
+  }
+  .narrow-container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gotop-btn {
+    right: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0px 11px;
+    &.visible {
+      bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  h1 {
+    @include rem(28);
+  }
+  h2 {
+    @include rem(26);
+  }
+  h3 {
+    @include rem(18);
+  }
+}

@@ -1,0 +1,3 @@
+query {
+  autocomplete(target_type: "taxonomy_term", bundle: "clip_tags", string: "rock")
+}

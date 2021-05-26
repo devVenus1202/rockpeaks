@@ -1,0 +1,5 @@
+query nodeCount($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter) {
+    count
+  }
+}

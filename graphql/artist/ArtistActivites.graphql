@@ -1,0 +1,99 @@
+query GetArtistActivities(
+  $artistId: Int!
+  $bundles: [String!]
+  $offset: Int!
+  $limit: Int!
+) {
+  getArtistsActivities(
+    artist_id: $artistId
+    bundles: $bundles
+    offset: $offset
+    limit: $limit
+  ) {
+    action
+    datetime
+    entity {
+      entityId
+      entityBundle
+      entityLabel
+      ... on NodePublicClip {
+        publicClipId: entityId
+        clipTitle
+        reversePublicClipNodesNode {
+          entities {
+            entityId
+            ... on NodeClip {
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+              show {
+                entity {
+                  entityId
+                  title
+                }
+              }
+              artist {
+                entity {
+                  entityId
+                  title
+                }
+              }
+            }
+          }
+        }
+      }
+      ... on NodeClip {
+        clipTitle
+        legacyImage {
+          url {
+            path
+          }
+        }
+        fieldStillImage {
+          url
+        }
+        smartStillImage {
+          uri
+        }
+        smartStillImage320x480 {
+          uri
+        }
+        smartStillImage640x480 {
+          uri
+        }
+        smartStillImage1280x720 {
+          uri
+        }
+        show {
+          entity {
+            entityId
+            title
+          }
+        }
+        artist {
+          entity {
+            entityId
+            title
+          }
+        }
+      }
+    }
+  }
+}

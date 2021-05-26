@@ -1,0 +1,130 @@
+query allContentsDetails($filter: EntityQueryFilterInput) {
+  nodeQuery(filter: $filter) {
+    entities {
+      entityId
+      ... on NodeArtist {
+        clipsCountTotal
+        clipsCountActive
+        nid
+        title
+        type {
+          targetId
+        }
+        legacyPublicityImage {
+          uri
+        }
+        artistPublicityImage {
+          url
+        }
+      }
+      ... on NodeClip {
+        nid
+        title
+        type {
+          targetId
+        }
+        legacyImageMedium {
+          url {
+            path
+          }
+        }
+        fieldStillImage {
+          url
+        }
+        legacyImage {
+          url {
+            path
+          }
+        }
+        legacyImageLarge {
+          url {
+            path
+          }
+        }
+        legacyImageSmall {
+          url {
+            path
+          }
+        }
+        legacyImageMedium {
+          url {
+            path
+          }
+        }
+        fieldStillImage {
+          url
+        }
+        smartStillImage {
+          uri
+        }
+        smartStillImage320x480 {
+          uri
+        }
+        smartStillImage640x480 {
+          uri
+        }
+        smartStillImage1280x720 {
+          uri
+        }
+        fieldYear
+        fieldMonth
+        fieldDay
+        artist {
+          entity {
+            nid
+            title
+          }
+        }
+        show {
+          entity {
+            nid
+            title
+          }
+        }
+        clipActive
+        clipTitle
+        clipType {
+          entity {
+            entityLabel
+          }
+        }
+      }
+      ... on NodeDisc {
+        clipsCountTotal
+        clipsCountActive
+        nid
+        title
+        type {
+          targetId
+        }
+        legacyImage {
+          uri
+        }
+        discArtwork {
+          url
+        }
+        discType {
+          entity {
+            entityLabel
+          }
+        }
+      }
+      ... on NodeShow {
+        clipsCountTotal
+        clipsCountActive
+        nid
+        title
+        type {
+          targetId
+        }
+        legacyImage {
+          uri
+        }
+        showBackgroundImage {
+          url
+        }
+      }
+    }
+    count
+  }
+}

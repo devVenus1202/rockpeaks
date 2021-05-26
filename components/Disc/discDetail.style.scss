@@ -1,0 +1,19 @@
+.disc-body-text {
+  padding-top: 12px;
+  overflow-y: scroll;
+  line-height: 1.8;
+}
+.content-panel {
+  height: 100%;
+}
+
+.disc-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .disc-inactive-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

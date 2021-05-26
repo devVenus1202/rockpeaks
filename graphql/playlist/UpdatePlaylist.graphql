@@ -1,0 +1,20 @@
+mutation updatePlaylist($id: String!, $title: String!, $clips: [String]) {
+  updatePlaylist(id: $id, title: $title, clips: $clips) {
+    entity {
+      entityId
+      entityLabel
+      ... on NodePlaylist {
+        clips {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

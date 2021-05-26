@@ -1,0 +1,795 @@
+query artistsByShowAlphabet($nid: String!) {
+  alphabet: nodeQuery (
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  a: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["a%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  b: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["b%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  c: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["c%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  d: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["d%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  e: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["e%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  f: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["f%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  g: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["g%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  h: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["h%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  i: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["i%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  j: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["j%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  k: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["k%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  l: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["l%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  m: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["m%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  n: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["n%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  o: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["o%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  p: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["p%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  q: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["q%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  r: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["r%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  s: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["s%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  t: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["t%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  u: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["u%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  v: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["v%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  w: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["w%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  x: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["x%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  y: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["y%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  z: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["z%"],
+          operator: LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  },
+  misc: nodeQuery(
+    filter: {
+
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["a%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["b%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["c%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["d%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["e%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["f%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["g%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["h%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["i%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["j%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["k%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["l%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["m%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["n%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["o%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["p%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["q%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["r%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["s%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["t%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["u%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["v%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["w%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["x%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["y%"],
+          operator: NOT_LIKE
+        },
+        {
+          field:  "artist.entity.title",
+          value: ["z%"],
+          operator: NOT_LIKE
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+  }
+}

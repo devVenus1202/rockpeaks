@@ -1,0 +1,17 @@
+@import 'styles/themes/theme';
+
+.page-clip {
+  @include themify($themes) {
+    &-section {
+      background: {
+        color: #272d37;
+        position: top center;
+        repeat: no-repeat;
+        size: cover;
+      }
+    }
+    &-blink {
+      @include linear-gradient(themed('detailPageGradient1'), themed('detailPageGradient2'));
+    }
+  }
+}

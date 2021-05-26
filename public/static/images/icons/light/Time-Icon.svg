@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Time-Icon-Light" fill="#3D4D65" fill-rule="nonzero">
+            <path d="M7,0 C3.13425,0 0,3.13425 0,7 C0,10.86575 3.13425,14 7,14 C10.86575,14 14,10.86575 14,7 C14,3.13425 10.86575,0 7,0 Z M9.006375,10.243625 L6.125,7.36225 L6.125,3.5 L7.875,3.5 L7.875,6.63775 L10.243625,9.006375 L9.006375,10.243625 L9.006375,10.243625 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

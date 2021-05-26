@@ -1,0 +1,20 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import 'styles/themes/dark/variables';
+
+.browse-page {
+  .main {
+    padding: 0px 8px;
+  }
+  .fixed-col {
+    min-width: 320px;
+    width: 100%;
+  }
+  @include media-breakpoint-up(md) {
+    .fixed-col {
+      width: 320px;
+    }
+  }
+  .left-col {
+    background: #344254;
+  }
+}

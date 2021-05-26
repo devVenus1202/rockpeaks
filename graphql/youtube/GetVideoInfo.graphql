@@ -1,0 +1,13 @@
+query getVideoInfo($url: String!) {
+  youtubeGetInfo(url: $url) {
+    info {
+      id
+      title
+      upload_date
+      thumbnail
+      webpage_url
+      description
+    }
+    error
+  }
+}

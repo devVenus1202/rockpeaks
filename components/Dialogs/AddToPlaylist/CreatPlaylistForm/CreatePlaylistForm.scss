@@ -1,0 +1,10 @@
+.add-playlist {
+  display: flex;
+  .playlist-input {
+    width: 50%;
+  }
+  button {
+    margin: 5px;
+    text-transform: none;
+  }
+}

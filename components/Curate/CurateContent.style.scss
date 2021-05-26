@@ -1,0 +1,17 @@
+.clip-content-wrapper {
+  .collapsed {
+    max-height: 6rem;
+    overflow-y: hidden;
+    transition: max-height 0.5s;
+  }
+  .expanded {
+    max-height: 22rem;
+    overflow-y: scroll;
+    transition: max-height 0.5s;
+  }
+
+  .clip-title-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

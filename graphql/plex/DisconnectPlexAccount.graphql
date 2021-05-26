@@ -1,0 +1,9 @@
+mutation disconnectPlexAccount {
+  disconnectPlexAccount {
+    message
+    user {
+      entityId
+      entityLabel
+    }
+  }
+}

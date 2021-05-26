@@ -1,0 +1,24 @@
+fragment clipDetailsArchiveClip on NodeArchiveClip {
+  body {
+    processed
+    summaryProcessed
+  }
+  durationHours
+  durationMins
+  durationSecs
+  videoStatus
+  bitrate
+  widthAndHeight
+  verticalResolution
+}
+
+query archiveClipDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ...clipDetailsArchiveClip
+  }
+}

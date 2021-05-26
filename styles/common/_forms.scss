@@ -1,0 +1,165 @@
+@import 'styles/themes/theme';
+form.styleguide {
+	max-width: 600px;
+	margin-bottom: 50px;
+}
+
+.form-control {
+	@include themify($themes) {
+		background-color: themed('formControlBg');
+		color: themed('inputColor');
+		border-color: themed('inputBorderColor');
+	}
+	height: $input-height;
+	line-height: $input-line-height;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+	@include themify($themes) {
+		background-color: themed('formControlBg');
+	}
+}
+
+.search-form {
+	.form-control {
+		padding-right: $input-padding-x * 5;
+	}
+	.btn {
+		background-color: transparent;
+		border-color: transparent;
+		color: $text-muted;
+		min-width: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		@include rem(19);
+		padding: $input-btn-padding-y $input-btn-padding-y;
+	}
+	.form-group {
+		position: relative;
+	}
+}
+
+label {
+	display: inline-block;
+	vertical-align: top;
+	[type='file'],
+	[type='checkbox'],
+	[type='radio'] {
+		margin-bottom: 0;
+	}
+}
+
+.text-muted {
+	@include themify($themes) {
+		color: themed('textColor') !important;
+	}
+}
+.form-control,
+input,
+textarea,
+select,
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea {
+	@include rem(14);
+	@include themify($themes) {
+		color: themed('inputColor');
+	}
+}
+
+label {
+	min-height: auto;
+	@include themify($themes) {
+		color: themed('textColor');
+	}
+}
+
+textarea {
+	height: 140px;
+	max-height: 300px;
+}
+
+.checkbox-group {
+	margin-bottom: 10px;
+	[type='checkbox'],
+	label {
+		margin-bottom: 0px;
+	}
+}
+
+.form-error {
+	@include fcn;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: $input-color;
+	opacity: 0.3;
+}
+
+.form-control:-moz-placeholder {
+	color: $input-color;
+	opacity: 0.3;
+}
+
+.form-control::-moz-placeholder {
+	color: $input-color;
+	opacity: 0.3;
+}
+
+.form-control:-ms-input-placeholder {
+	color: $input-color;
+	opacity: 0.3;
+}
+
+.label-title {
+	@include themify($themes) {
+		font-weight: 400;
+		color: themed("textColor");
+		margin-bottom: 0.66rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+select:not([multiple]) {
+	@include themify($themes) {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background-position: 95% 50%;
+		background-repeat: no-repeat;
+		background-size: 9px;
+		background-image: url(#{themed('iconFolder')}/Select-Arrow-Icon.svg);
+	}
+}
+
+select {
+	&.form-control {
+		display: inline-block;
+		margin-right: 1rem;
+		padding-right: 2rem;
+		height: $input-select-height;
+	}
+
+	&.smaller-select {
+		max-width: 90px;
+	}
+}
+
+select:not([multiple]) {
+	&.smaller-select {
+		background-position: 90% 50%;
+	}
+}

@@ -1,0 +1,89 @@
+query userLogin($username: String!, $password: String!) {
+  login(input: { username: $username, password: $password }) {
+    key
+    issued_at
+    issued_at_formatted
+    expire_at
+    expire_at_formatted
+    roles
+    error
+    account {
+      uid
+      uuid
+      name
+      mail
+      created
+      roles {
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+      rpCustomerProfiles {
+        targetId
+        entity {
+          ... on ProfileRpCustomer {
+            rp_user_public_profile_link
+            avatarImage {
+              thumbnail: derivative(style: THUMBNAIL) {
+                url
+                width
+                height
+              }
+              large: derivative(style: LARGE) {
+                url
+                width
+                height
+              }
+              url
+              width
+              height
+              alt
+              title
+            }
+            themeSelectionState
+            fbProfileLink {
+              uri
+            }
+            twitterProfileLink {
+              uri
+            }
+          }
+        }
+      }
+      reverseUidProfile {
+        entities {
+          ... on Profile {
+            entityId
+            ... on ProfileRpCustomer {
+              avatarImage {
+                thumbnail: derivative(style: THUMBNAIL) {
+                  url
+                  width
+                  height
+                }
+                large: derivative(style: LARGE) {
+                  url
+                  width
+                  height
+                }
+                url
+                width
+                height
+                alt
+                title
+              }
+              themeSelectionState
+              fbProfileLink {
+                uri
+              }
+              twitterProfileLink {
+                uri
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

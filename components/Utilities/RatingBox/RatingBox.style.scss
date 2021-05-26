@@ -1,0 +1,13 @@
+@import 'styles/themes/theme';
+
+.rating-box {
+  @include themify($themes) {
+    text-align: right;
+    padding-right: 25px;
+    color: themed('textMuted');
+    @include media-breakpoint-down(lg) {
+      text-align: left;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+.next
+.DS_Store
+.storybook
+npm-debug.log
+dockerfile
+.env.sample
+.gitignore
+*.md
+deploy
+static/storybook
+tmp

@@ -1,0 +1,12 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noUnusedParameters": false,
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["./*"]
+    }
+  }
+}

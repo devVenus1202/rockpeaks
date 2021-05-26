@@ -1,0 +1,29 @@
+fragment showDetailsShowContents on NodeShow {
+  nid
+  title
+  type {
+    targetId
+  }
+  legacyImage {
+    uri
+  }
+  showBackgroundImage {
+    url
+  }
+  totalClips: reverseShowNode(filter: {}) {
+    count
+  }
+  activeClips: reverseShowNode(filter: {conditions: [{field: "status", value: "1", operator: EQUAL}]}) {
+    count
+  }
+}
+
+query showContents($filter: EntityQueryFilterInput, $limit: Int, $offset: Int) {
+  nodeQuery(filter: $filter, limit: $limit, offset: $offset) {
+    entities {
+      entityId
+      ...showDetailsShowContents
+    }
+    count
+  }
+}

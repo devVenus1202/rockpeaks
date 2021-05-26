@@ -1,0 +1,417 @@
+@import 'styles/themes/theme';
+.nav-carousel {
+  margin: 0 auto;
+  position: relative;
+  @include themify($themes) {
+    .btn-link.prev {
+      left: 1rem !important;
+    }
+    .btn-link.next {
+      right: 1rem !important;
+    }
+    .btn-link.prev,
+    .btn-link.next {
+      top: 75px;
+    }
+
+    .nav-link {
+      width: 100%;
+      padding-right: 0px;
+      padding-left: 0px;
+      padding-top: 0px;
+      text-transform: unset;
+    }
+    .nav-link.active {
+      border-color: transparent;
+      background-color: #324054;
+    }
+    .nav-link-card-image {
+      width: 100%;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: themed('mainColor') !important;
+    }
+
+    .slick-slider {
+      width: 100%;
+      padding: 1rem 2rem 0rem 2rem !important;
+      .btn-link.prev,
+      .btn-link.next {
+        top: 75px;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        content: none;
+        color: themed('mainColor') !important;
+      }
+      .card-title {
+        height: 3rem;
+        text-overflow: hidden;
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+
+  .slick-carousel-wrap {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .slick-track {
+    flex-wrap: nowrap;
+    display: flex !important;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: space-between !important;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+  }
+}
+
+.playlist-nav-link {
+  .nav-link-card {
+    border-bottom: 2px solid transparent;
+  }
+  &.active-nav-link,
+  &:hover {
+    border-bottom: none !important;
+
+    .nav-link-card {
+      border-bottom: 2px solid #ff9948;
+    }
+  }
+
+  &.active-nav-link {
+    .card-content {
+      justify-content: center;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+
+    .save-as-disc-btn,
+    .load-into-player-btn {
+      width: 28px;
+      height: 28px;
+      padding: 2px 6px;
+      background: #3d4d65;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .clip-label-wrapper {
+    flex-grow: 1;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .thumb-container {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    .thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      font-size: 20px;
+      color: white;
+      overflow: hidden;
+      -ms-box-orient: horizontal;
+      // border: 1px solid #202830;
+      padding: 1px;
+
+      .image-wrapper {
+        flex-shrink: 0;
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-align-items: stretch;
+        align-items: center;
+      }
+    }
+  }
+}
+
+$slick-font-family: 'slick' !default;
+$slick-loader-path: '../../node_modules/slick-carousel/slick/';
+$slick-font-path: '../../node_modules/slick-carousel/slick/fonts/';
+
+@import 'styles/themes/theme';
+@import '../../node_modules/react-input-range/src/scss/index';
+
+@import '../../node_modules/slick-carousel/slick/slick';
+@import '../../node_modules/slick-carousel/slick/slick-theme';
+
+.tab-content {
+  padding-bottom: 2rem;
+}
+
+.justify-content-between {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.slick-carousel-wrap {
+  @include themify($themes) {
+    .btn {
+      padding: 0;
+      top: 33%;
+      position: absolute;
+      width: 32px;
+      min-width: 32px;
+      z-index: 50;
+      &.prev {
+        left: 0;
+        text-align: left;
+      }
+      &.next {
+        right: 0;
+        text-align: right;
+      }
+    }
+    .btn-add-to-playlist {
+      top: 5px !important;
+      left: 5px !important;
+      display: none;
+      z-index: 1;
+    }
+    .clips-counter {
+      font-size: 15px;
+      .text-muted {
+        color: themed('textColor') !important;
+      }
+    }
+    .slick-arrow {
+      &.slick-prev,
+      &.slick-next {
+        color: themed('mainColor') !important;
+        top: 75px !important;
+      }
+      // slick-prev:before,
+      // .slick-next:before {
+      //   color: themed('mainColor') !important;
+      // }
+    }
+    .input-range-wrap {
+      padding: 0 2.5rem;
+    }
+    .slick-slider {
+      padding: 1rem 2rem 3rem 2rem;
+    }
+    .slick-track {
+      @extend .d-flex;
+      flex-wrap: nowrap;
+    }
+    .slick-slide {
+      @extend .d-flex;
+      @extend .justify-content-between;
+
+      & > div {
+        padding: 0 0.5rem;
+        width: 100%;
+      }
+
+      .card-clip-slide {
+        background-color: inherit;
+        border: none;
+        @include trans;
+        padding: 10px;
+        .thumb-container {
+          background-color: black;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding-top: 75%; /* 56.25%; 16:9 Aspect Ratio */
+
+          &:hover {
+            .btn-add-to-playlist {
+              display: block;
+              &:hover svg path {
+                fill: white !important;
+              }
+            }
+          }
+          .thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -webkit-align-items: stretch;
+            align-items: center;
+            // border: 1px solid themed('thumbBorderColor');
+            // padding: 1px;
+            &:hover {
+              .btn-add-to-playlist {
+                display: block;
+                &:hover svg path {
+                  fill: white !important;
+                }
+              }
+              border: 1px solid #66afe9;
+              -webkit-box-shadow: 0 1px 1px rgba(80, 70, 70, 0.075) inset,
+                0 0 12px themed('thumbShadowColor');
+              -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+                0 0 12px themed('thumbShadowColor');
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+                0 0 12px themed('thumbShadowColor');
+            }
+
+            .image-wrapper {
+              flex-shrink: 0;
+              flex-grow: 1;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              img {
+                width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+
+        .responsive-image-container {
+          // max-width: 320px;
+          cursor: pointer;
+          background-color: #202831;
+          border-radius: $border-radius;
+          img {
+            @include trans;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            border: 1px solid #000;
+          }
+          &:hover {
+            .btn-add-to-playlist {
+              display: block;
+              &:hover svg path {
+                fill: white !important;
+              }
+            }
+            img {
+              border: 1px solid #66afe9;
+              -webkit-box-shadow: 0 1px 1px rgba(80, 70, 70, 0.075) inset,
+                0 0 10px themed('thumbShadowColor');
+              -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+                0 0 10px themed('thumbShadowColor');
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+                0 0 10px themed('thumbShadowColor');
+            }
+          }
+          @include media-breakpoint-up(sm) {
+          }
+          @include media-breakpoint-up(md) {
+          }
+          @include media-breakpoint-up(lg) {
+          }
+          @include media-breakpoint-up(xl) {
+          }
+        }
+
+        .card-title {
+          color: themed('textColor');
+          margin-bottom: 5px;
+          a {
+            color: themed('textColorEmphorsized');
+            &:hover {
+              color: themed('secondaryNavHoverColor');
+            }
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .card-text {
+          color: themed('textColor');
+          a {
+            color: themed('textColor');
+            margin-bottom: 0;
+
+            &:hover {
+              color: themed('secondaryNavHoverColor');
+              cursor: pointer;
+            }
+          }
+        }
+
+        .card-body {
+          line-height: 1.5rem;
+          padding: 20px 0 0 0;
+        }
+
+        &:hover .card-img-top {
+          transform: scale(1.12);
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

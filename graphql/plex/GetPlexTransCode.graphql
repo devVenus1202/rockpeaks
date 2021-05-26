@@ -1,0 +1,8 @@
+query getPlexTransCode($authToken: String!, $clientId: String!, $mediaPath: String!, $sectionKey: String!) {
+  url: plexGetVideoTranscodeUrl(
+    authToken: $authToken
+    clientId: $clientId
+    mediaPath: $mediaPath
+    sectionKey: $sectionKey
+  )
+}

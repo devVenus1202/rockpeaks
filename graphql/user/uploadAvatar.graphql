@@ -1,0 +1,11 @@
+mutation uploadFile($file: Upload!) {
+  uploadAvatarImage(file: $file) {
+    entity {
+      entityId
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

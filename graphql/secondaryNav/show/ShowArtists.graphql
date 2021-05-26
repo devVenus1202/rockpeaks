@@ -1,0 +1,39 @@
+query artistsByShow($nid: String!) {
+  artistsByShow: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        }
+      ]
+    },
+    limit: 100000,
+    sort: {
+      field: "artist.entity.title",
+      direction: ASC
+    }
+  ) {
+    count
+    entities {
+      ... on NodeClip {
+        artist {
+          entity {
+            ... on NodeArtist {
+              artist: title
+              artistNid: nid
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

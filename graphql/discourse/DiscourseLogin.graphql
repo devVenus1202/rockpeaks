@@ -1,0 +1,6 @@
+mutation discourseLogin($sso: String!, $sig: String!) {
+  discourseLogin(sso: $sso, sig: $sig) {
+    redirectUrl
+    error
+  }
+}

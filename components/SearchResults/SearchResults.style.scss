@@ -1,0 +1,54 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/dark/variables';
+
+.content-table-view {
+  .content-scroll-box {
+    margin-top: 20px;
+    padding-right: 10px;
+    max-height: 827px;
+    height: 827px;
+
+    @include media-breakpoint-down(md) {
+      overflow-y: scroll !important;
+      padding-right: 15px;
+    }
+    @include media-breakpoint-down(sm) {
+      overflow-y: scroll !important;
+      padding-right: 15px;
+    }
+  }
+
+  .content-search-result {
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+
+    p {
+      font-weight: 400;
+      margin-left: 80%;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .content-search-result {
+      p {
+        margin-left: 70%;
+      }
+    }
+  }
+}
+
+.search-results-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.search-results-sort {
+  color: $input-border-color;
+  text-decoration: none;
+  &:hover {
+    color: $input-color;
+    text-decoration: none;
+  }
+}

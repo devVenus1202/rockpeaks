@@ -1,0 +1,136 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/dark/variables';
+
+.step-list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+
+  li {
+    position: relative;
+    z-index: 2;
+    list-style: none;
+    display: inline-block;
+    width: 29%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 300;
+    @include rem(18);
+    @include media-breakpoint-down(md) {
+      @include rem(14);
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include rem(12);
+      width: 22%;
+      line-height: 32px;
+    }
+
+    &.checked .step-list-number {
+      background-color: $success;
+      span {
+        display: none;
+      }
+      img {
+        display: inline-block;
+      }
+    }
+
+    &.checked .step-list-text {
+      color: #fff;
+    }
+
+    &.active .step-list-number {
+      background-color: $warning;
+    }
+
+    &.active .step-list-text {
+      color: #fff;
+    }
+
+    &:first-child {
+      text-align: left;
+      width: 20%;
+      @include media-breakpoint-down(sm) {
+        width: 22%;
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+      width: 22%;
+      @include media-breakpoint-down(sm) {
+        width: 22%;
+      }
+      .step-list-number {
+        margin-right: 10px;
+        @include media-breakpoint-down(sm) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    br {
+      display: none;
+      @include media-breakpoint-down(sm) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &-number {
+    display: inline-block;
+    background-color: $secondary;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: inherit;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 0px 15px $component-bg;
+    font-size: inherit;
+    @include media-breakpoint-down(sm) {
+      box-shadow: 0px 0px 0px 5px $component-bg;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  &-text {
+    text-transform: uppercase;
+    color: $secondary;
+    font-size: inherit;
+    line-height: 16px;
+    @include media-breakpoint-down(sm) {
+      @include rem(10);
+    }
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 95%;
+    height: 2px;
+    background-color: $border-color;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    z-index: 1;
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+    }
+  }
+
+  &-container {
+    padding-left: 0px;
+    padding-right: 0px;
+    @include media-breakpoint-down(lg) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

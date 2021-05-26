@@ -1,0 +1,25 @@
+version: "3"
+services:
+  # nextjs:
+  #   image: musicpeaks/nextjs
+  #   build: .
+  #   environment:
+  #     - DEBUG=musicpeaks:*
+  #     - PORT=3001
+  #   extra_hosts:
+  #     - "localhost:127.0.0.1"
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - .:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   ports:
+  #     - 3001:3001
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: local.Dockerfile
+    # depends_on:
+    #   - nextjs
+    ports:
+      - 3000:3000

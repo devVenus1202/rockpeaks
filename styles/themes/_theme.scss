@@ -1,0 +1,126 @@
+@import 'styles/common/mixins';
+@import 'styles/common/variables';
+
+@function setTheme() {
+  $theme: (
+    mainBackgroundColor: $main-background,
+    mainColor: $main-color,
+    componentBackground: $component-bg,
+    componentBackgroundSecondary: $component-bg-secondary,
+    backgroundColor: $modal-content-bg,
+    backgroundSolid: $main-background,
+    borderColor: $border-color,
+    gradientBg1: $gradient-bg-1,
+    gradientBg2: $gradient-bg-2,
+    textColor: $text-muted,
+    textMuted: $text-muted,
+    secondary: $secondary,
+    danger: $danger,
+    textColorSecondary: $text-color-reversed,
+    textColorEmphorsized: $text-emphorsized,
+    disactiveColor: $disactive-color,
+    navColor: $gray-600,
+    navColorHover: $text-color-reversed,
+    formControlBg: $input-bg,
+    inputColor: $input-color,
+    inputBorderColor: $input-border-color,
+    headerColor: $header-color,
+    headerColorHover: $header-color-hover,
+    headerDark: $header-darker,
+    headerDarkHover: $header-darker-hover,
+    headerBright: $header-bright,
+    headerBrightHover: $header-bright-hover,
+    logoURL: $logo,
+    splitLineColor: $split-line-bg,
+    linkColor: $link-color,
+    menuItemBg: $menu-item-bg,
+    maskGradient: $gradient-mask,
+    maskColor: $background-mask-color,
+    secondaryNavBg: $sec-nav-bg,
+    secondaryNavActiveBg: $sec-nav-active-bg,
+    secondaryNavHoverBg: $sec-nav-hover-bg,
+    secondaryNavHoverColor: $sec-nav-hover-color,
+    secondaryNavColor: $sec-nav-color,
+    mediaBoxHoverBg: $media-box-hover-bg,
+    paginationBorderColor: $pagination-border-color,
+    detailPageBackground: $detailPageBg,
+    detailPageGradient1: $detailPageGradient1,
+    detailPageGradient2: $detailPageGradient2,
+    customControlIndicatorBorder: $custom-control-indicator-border,
+    thumbShadowColor: $carouselShawdowColor,
+    thumbBorderColor: $thumb-border-color,
+    strippedColor: $stripped-color,
+  );
+  @return $theme;
+}
+
+//initialize dark theme
+@import 'styles/themes/dark/variables';
+$darkTheme: map_merge(
+  setTheme(),
+  (
+    iconFolder: '/static/images/icons/dark',
+    gradientImage: '../public/static/images/black-gradient.png',
+  )
+);
+
+//initialize light theme
+@import 'styles/themes/light/variables';
+$lightTheme: map_merge(
+  setTheme(),
+  (
+    iconFolder: '/static/images/icons/light',
+    gradientImage: '../public/static/images/white-gradient.png',
+  )
+);
+
+$themes: map-merge(
+  (
+    dark: $darkTheme,
+  ),
+  (
+    light: $lightTheme,
+  )
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin themify_class($themes) {
+  @each $theme, $map in $themes {
+    &.theme-#{$theme} {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

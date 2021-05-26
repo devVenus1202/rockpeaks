@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Pencil Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Edit-Clip-Button-Light" fill="#374355">
+            <path d="M18.5885614,5.1855246 L14.8133329,1.4106743 L15.4426766,0.78167144 C16.4854699,-0.260557147 18.1751118,-0.260557147 19.217905,0.78167144 C20.2606983,1.82390003 20.2606983,3.51429315 19.217905,4.55652174 L18.5885614,5.1855246 L18.5885614,5.1855246 Z M0,20 L1.25868734,14.9663109 L1.88803101,14.337308 L5.66325946,18.1121583 L5.03391579,18.7419943 L0,20 L0,20 Z M17.3307076,6.44436345 L6.9219468,16.8541526 L3.14588478,13.0793023 L13.5554791,2.66951315 L17.3307076,6.44436345 L17.3307076,6.44436345 Z" id="Pencil-Icon"></path>
+        </g>
+    </g>
+</svg>

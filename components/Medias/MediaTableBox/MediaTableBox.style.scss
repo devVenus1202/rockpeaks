@@ -1,0 +1,31 @@
+.media-tablebox-style {
+  & > img {
+    width: 133px;
+    max-width: 133px;
+    height: 75px;
+  }
+
+  .clip-media-list {
+    li {
+      a {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .clip-missing {
+    &:before {
+      background: rgba(0,0,0,.75) url(/static/images/icons/svg/missing-video-icon-normal.svg) center center no-repeat;
+      background-size: 50% 50%;
+      content: " ";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

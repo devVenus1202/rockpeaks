@@ -1,0 +1,26 @@
+query curatedContent($filter: EntityQueryFilterInput, $limit: Int) {
+  nodeQuery(filter: $filter, limit: $limit) {
+    count
+    entities {
+      entityId
+      entityBundle
+      entityLabel
+      ...on NodeArtist {
+        legacy_image:legacyPublicityImage {
+          uri
+        }
+        clips {
+          count
+        }
+      }
+      ...on NodeShow {
+        legacy_image:legacyImage {
+          uri
+        }
+        clips {
+          count
+        }
+      }
+    }
+  }
+}

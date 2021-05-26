@@ -1,0 +1,29 @@
+query {
+  getUserSubscriptions {
+    nid
+    type
+    title
+    entity {
+      entityId
+      entityLabel
+      ... on NodeArtist {
+        changed
+        legacy_image: legacyPublicityImage {
+          uri
+        }
+        clips {
+          count
+        }
+      }
+      ... on NodeShow {
+        changed
+        legacy_image: legacyImage {
+          uri
+        }
+        clips {
+          count
+        }
+      }
+    }
+  }
+}

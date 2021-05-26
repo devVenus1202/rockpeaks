@@ -1,0 +1,44 @@
+query showsBySongByAlbumByArtist($nid: String) {
+  showsBySongByAlbumByArtist: nodeQuery(
+    filter: {
+      conditions: [
+        { field: "type", value: "clip", operator: EQUAL }
+        {
+          field: "canonical_recording.entity.nid"
+          value: [$nid]
+          operator: EQUAL
+        }
+      ]
+    }
+    sort: [
+      { field: "field_year", direction: ASC }
+      { field: "field_month", direction: ASC }
+      { field: "field_day", direction: ASC }
+      { field: "title", direction: ASC }
+    ]
+    limit: 100000
+  ) {
+    count
+    entities {
+      ... on NodeClip {
+        clipNid: nid
+        fieldDay
+        fieldMonth
+        fieldYear
+        clipTitle
+        show {
+          entity {
+            title
+            entityId
+          }
+        }
+        canonicalRecording {
+          entity {
+            canonicalNid: entityId
+          }
+        }
+        status
+      }
+    }
+  }
+}

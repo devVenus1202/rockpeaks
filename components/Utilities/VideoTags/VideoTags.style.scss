@@ -1,0 +1,15 @@
+.video-tag-wrapper {
+  & > div {
+    min-height: 60px;
+  }
+  .collapsed {
+    max-height: 6rem;
+    overflow-y: hidden;
+    transition: max-height 0.5s;
+  }
+  .expanded {
+    max-height: 12rem;
+    overflow-y: scroll;
+    transition: max-height 0.5s;
+  }
+}

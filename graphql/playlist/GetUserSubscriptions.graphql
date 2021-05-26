@@ -1,0 +1,19 @@
+query getSubscriptions($type: [String]) {
+  getUserSubscriptions(entity_bundles: $type) {
+    nid
+    type
+    title
+    entity {
+      entityLabel
+      ... on NodePlaylist {
+        clipsCount
+        clips {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+  }
+}

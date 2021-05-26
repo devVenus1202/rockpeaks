@@ -1,0 +1,34 @@
+query staticPageContent($title: String!) {
+  staticPageContent: nodeQuery(
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "page",
+          operator: EQUAL
+        },
+        {
+          field:  "title",
+          value: [$title],
+          operator: LIKE
+        },
+        {
+          field:  "client",
+          value: "rp",
+          operator: EQUAL
+        }
+      ]
+    }
+  ) {
+    count
+    entities {
+      ... on NodePage {
+        title
+        body {
+          processed
+          value
+        }
+      }
+    }
+  }
+}

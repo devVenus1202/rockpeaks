@@ -1,0 +1,67 @@
+query ClipCarouselClip($nid: String!, $offset: Int, $limit: Int, $filter: EntityQueryFilterInput, $sort: [EntityQuerySortInput]) {
+	nodeById(id: $nid) {
+		nid
+		reverse: reverseClipsNode(limit: $limit, offset: $offset, sort: $sort, filter: $filter) {
+			count
+			entities {
+				entityId
+				entityCreated
+				entityUrl {
+					path
+				}
+				... on NodeClip {
+					nid
+					clipTitle
+					fieldDay
+					fieldMonth
+					fieldYear
+					artist {
+						entity {
+							nid
+							title
+						}
+					}
+					show {
+						entity {
+							nid
+							title
+						}
+					}
+					body {
+						processed
+						summaryProcessed
+					}
+					legacyImage {
+						url {
+							path
+						}
+					}
+					legacyImageSmall {
+						url {
+							path
+						}
+					}
+					legacyImageMedium {
+						url {
+							path
+						}
+					}
+
+          smartStillImage {
+            uri
+          }
+          smartStillImage320x480 {
+            uri
+          }
+          smartStillImage640x480 {
+            uri
+          }
+          smartStillImage1280x720 {
+            uri
+          }
+
+				}
+			}
+		}
+	}
+}

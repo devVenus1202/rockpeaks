@@ -1,0 +1,14 @@
+mutation createUser($name: String, $mail: String!, $pass: String!) {
+  createUser(input: { name: $name, mail: $mail, pass: $pass }) {
+    entity {
+      entityId
+      entityUuid
+      entityLabel
+      entityCreated
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

@@ -1,0 +1,51 @@
+query songsByShowByArtist (
+$nid: String,
+$showNid: String
+) {
+  songsByShowByArtist: nodeQuery(
+    limit: 1000000,
+    sort: [
+      {
+        field: "field_year",
+        direction: ASC,
+      },
+      {
+        field: "field_month",
+        direction: ASC,
+      },
+      {
+        field: "field_day",
+        direction: ASC,
+      },
+      {
+        field: "nid",
+        direction: ASC,
+      },
+    ],
+    filter: {
+      conditions: [
+        {field: "type", value: "clip", operator: EQUAL},
+        {field: "artist.entity.nid", value: [$nid], operator: EQUAL},
+        {field: "show.entity.nid", value: [$showNid], operator: EQUAL}
+      ]
+    }
+  ) {
+    entities {
+      ... on NodeClip {
+        clipNid: nid
+        clipTitle
+        fieldDay
+        fieldYear
+        fieldMonth
+        status
+        show {
+          entity {
+            ... on NodeShow {
+              showNid: nid
+            }
+          }
+        }
+      }
+    }
+  }
+}

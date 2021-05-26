@@ -1,0 +1,77 @@
+query {
+  currentUserContext {
+    uid
+    name
+    mail
+    roles {
+      targetId
+    }
+    reverseUidProfile {
+      entities {
+        ... on Profile {
+          ... on ProfileRpCustomer {
+            avatarImage {
+              thumbnail: derivative(style: THUMBNAIL) {
+                url
+                width
+                height
+              }
+              large: derivative(style: LARGE) {
+                url
+                width
+                height
+              }
+              url
+              width
+              height
+              alt
+              title
+            }
+          }
+          # ... on ProfileMpCustomer {
+          #   image {
+          #     thumbnail: derivative(style: THUMBNAIL) {
+          #       url
+          #       width
+          #       height
+          #     }
+          #     large: derivative(style: LARGE) {
+          #       url
+          #       width
+          #       height
+          #     }
+          #     url
+          #     width
+          #     height
+          #     alt
+          #     title
+          #   }
+          #   headerImage {
+          #     thumbnail: derivative(style: THUMBNAIL) {
+          #       url
+          #       width
+          #       height
+          #     }
+          #     large: derivative(style: LARGE) {
+          #       url
+          #       width
+          #       height
+          #     }
+          #     url
+          #     width
+          #     height
+          #     alt
+          #     title
+          #   }
+          #   youtubeChannels {
+          #     entity {
+          #       entityId
+          #       entityLabel
+          #     }
+          #   }
+          # }
+        }
+      }
+    }
+  }
+}

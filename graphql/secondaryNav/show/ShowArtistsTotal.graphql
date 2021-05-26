@@ -1,0 +1,22 @@
+query artistsByShowTotal($nid: String!) {
+  artistsByShowTotal: nodeQuery (
+    filter: {
+      conditions:  [
+        {
+          field:  "type",
+          value: "clip",
+          operator: EQUAL
+        },
+        {
+          field:  "show.entity.nid",
+          value: [$nid],
+          operator: EQUAL
+        }
+      ]
+    },
+    limit: 100000,
+  ) {
+    count
+
+  }
+}

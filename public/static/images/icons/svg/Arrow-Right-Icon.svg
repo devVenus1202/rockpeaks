@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="13px" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow Right Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dark-Theme-(Anonymous-User)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="All-Clips-Menu" transform="translate(-722.000000, -476.000000)" fill="#8493A8">
+            <g id="Group-6" transform="translate(375.000000, 188.000000)">
+                <g id="Group-8-Copy" transform="translate(28.000000, 282.408521)">
+                    <path d="M319.259866,7.54935021 L323.880295,12.1857787 L319.259866,16.8227938 C318.913378,17.1706433 318.913378,17.7343588 319.259866,18.0816217 C319.606355,18.4294711 320.167503,18.4294711 320.513991,18.0816217 L325.742816,12.8339636 C325.920727,12.6556394 326.005891,12.4204158 326.001224,12.1857787 C326.005891,11.9523148 325.920727,11.7165046 325.742816,11.5381804 L320.513991,6.29052234 C320.167503,5.94325947 319.606355,5.94325947 319.259866,6.29052234 C318.913378,6.63837179 318.913378,7.20208735 319.259866,7.54935021 L319.259866,7.54935021 Z" id="Arrow-Right-Icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

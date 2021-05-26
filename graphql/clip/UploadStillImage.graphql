@@ -1,0 +1,28 @@
+mutation(
+  $file: Upload!
+  $entity_type: String!
+  $entity_bundle: String
+  $field_name: String!
+  $entity_id: Int!
+) {
+  uploadFile(
+    file: $file
+    entity_type: $entity_type
+    entity_bundle: $entity_bundle
+    field_name: $field_name
+    entity_id: $entity_id
+  ) {
+    entity {
+      entityId
+      ... on NodeClip {
+        fieldStillImage {
+          url
+        }
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

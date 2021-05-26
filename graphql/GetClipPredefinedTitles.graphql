@@ -1,0 +1,9 @@
+query clipPredefinedTitles($filter: EntityQueryFilterInput) {
+  taxonomyTermQuery(filter: $filter, limit: 1000) {
+    entities {
+      ... on TaxonomyTerm {
+        name
+      }
+    }
+  }
+}

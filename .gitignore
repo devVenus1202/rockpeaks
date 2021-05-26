@@ -1,0 +1,30 @@
+.DS_Store
+.idea
+.next
+.graphqlconfig
+.cache/*
+node_modules
+.env
+.vscode
+static/storybook
+public/static/storybook
+npm-debug.log
+yarn-error.log
+deploy/test-env.sh
+deploy/node_modules
+tmp
+yarn-error.log
+coverage
+__snapshots__
+*.snap
+report.*.json
+
+# CDK noise
+rockpeaks-react-cdk/*.js
+rockpeaks-react-cdk/!jest.config.js
+rockpeaks-react-cdk/*.d.ts
+rockpeaks-react-cdk/node_modules
+
+# CDK asset staging directory
+rockpeaks-react-cdk/.cdk.staging
+rockpeaks-react-cdk/cdk.out

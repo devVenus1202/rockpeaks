@@ -1,0 +1,12 @@
+query masterGenres($filter: EntityQueryFilterInput) {
+  taxonomyTermQuery(filter: $filter, limit: 100) {
+    entities {
+      entityId
+      ... on TaxonomyTermMasterGenre {
+        name
+        tid
+      }
+    }
+    count
+  }
+}

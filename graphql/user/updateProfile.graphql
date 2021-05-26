@@ -1,0 +1,27 @@
+mutation updateProfile($fbLink: String, $twitterLink: String, $themeState: String) {
+  updateRPProfile(
+    fb_profile_link: $fbLink
+    twitter_profile_link: $twitterLink
+    theme_selection_state: $themeState
+  ) {
+    entity {
+      ... on ProfileRpCustomer {
+        uid {
+          targetId
+        }
+        profileId
+        fbProfileLink {
+          uri
+        }
+        twitterProfileLink {
+          uri
+        }
+        themeSelectionState
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

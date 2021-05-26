@@ -1,0 +1,16 @@
+@import 'styles/themes/theme';
+.tag-item-container {
+  @include themify($themes) {
+    button {
+      outline: none;
+      color: white !important;
+      padding: 0.4rem 0.5rem !important;
+    }
+  }
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(147, 147, 148);
+  background-image: linear-gradient(rgba(76, 81, 90, 0.28), rgba(147, 147, 148, 0.15));
+  border: 1px solid rgb(147, 147, 148);
+  // background: #8493a8;
+}

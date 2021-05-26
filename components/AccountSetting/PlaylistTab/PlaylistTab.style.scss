@@ -1,0 +1,295 @@
+@import 'styles/themes/theme';
+
+.setting-playlist-tab {
+  @include themify($themes) {
+    .nav-tabs-secondary {
+      border: none;
+
+      .nav-item .nav-link {
+        display: inline-block;
+        text-align: center;
+        padding: 0;
+        padding-bottom: 10px;
+        text-transform: inherit;
+      }
+
+      .nav-item {
+        // max-width: 210px;
+        margin: 0 20px;
+      }
+      .nav-item {
+        &:last-child {
+          margin-right: 0;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .nav-link.active,
+      .nav-item.show .nav-link {
+        border-color: transparent;
+        background-color: themed('componentBackgroundSecondary');
+
+        .fa-angle-down {
+          transform: rotate(0deg);
+        }
+      }
+
+      .fa-angle-down {
+        @include rem(20);
+        @include trans;
+        // margin-left: 10px;
+        transform: rotate(180deg);
+      }
+    }
+
+    .nav-link-card {
+      display: inline-block;
+      background-color: themed('componentBackgroundSecondary');
+      // max-width: 210px;
+      // min-width: 210px;
+      // min-height: 160px;
+      position: relative;
+      overflow: hidden;
+      display: block;
+
+      &-poster {
+        display: inline-block;
+        display: block;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    .tab-content-secondary {
+      background-color: themed('componentBackgroundSecondary');
+      .tab-pane {
+        padding: 15px;
+        // padding: 0;
+        // padding-top: 15px;
+      }
+    }
+
+    .card {
+      border: none;
+      border-radius: 0;
+      background-color: #334056;
+      overflow: hidden;
+    }
+
+    .table td {
+      border: none;
+    }
+
+    .card-header {
+      padding: 0;
+      background-color: $dark;
+      border-radius: 0;
+
+      &-link {
+        display: block;
+        padding: 20px 30px;
+        padding-left: 10px;
+        text-decoration: none;
+        position: relative;
+        @include rem(15);
+        background-color: #334056;
+        color: $text-grey-light;
+        @include trans;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 2px;
+          height: 100vh;
+          background-color: $warning;
+          position: absolute;
+          left: 0;
+          top: 0;
+          @include trans;
+        }
+
+        &.second-level {
+          margin-left: 2px;
+          padding: 20px 30px;
+          display: block;
+          color: #fff;
+          &.collapsed {
+            background-color: #334056;
+            padding-left: 2rem;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+
+        .table td {
+          font-size: 1rem;
+
+          &:first-child {
+            padding: 20px 30px;
+            padding-left: 10px;
+            @include trans;
+          }
+        }
+
+        &.collapsed {
+          background-color: $dark;
+          padding-left: 1.333rem;
+
+          .table td:first-child {
+            padding-left: 1.333rem;
+          }
+          &::before {
+            // background-color: transparent;
+            height: 0;
+          }
+
+          .card-header-arrow {
+            transform: rotate(0deg);
+          }
+        }
+
+        // &::before {
+        //   content: "";
+        //   display: inline-block;
+        //   height: 100%;
+        //   width: 2px;
+        //   background-color: $warning;
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0;
+        //   @include trans;
+        // }
+      }
+
+      &-arrow {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(90deg);
+        @include trans;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+    }
+
+    table {
+      @include rem(13);
+      &:hover {
+        color: #fff;
+      }
+      &:hover a {
+        color: #fff;
+      }
+      & a {
+        color: $text-grey-light;
+        &:hover {
+          text-decoration: underline;
+          color: #fff;
+        }
+      }
+    }
+
+    .table td:first-child {
+      padding-left: 1.5rem;
+    }
+
+    .second-level-content {
+      margin-left: 1.5rem;
+    }
+
+    .slick-carousel-wrap {
+      .btn {
+        padding: 0;
+        top: 33%;
+        position: absolute;
+        width: 32px;
+        min-width: 32px;
+        z-index: 50;
+      }
+
+      .btn.prev {
+        left: 0;
+        text-align: left;
+      }
+
+      .btn.next {
+        right: 0;
+        text-align: right;
+      }
+
+      .slick-slider {
+        padding: 1rem 2rem 3rem 2rem;
+
+        .slick-arrow.slick-prev,
+        .slick-arrow.slick-next {
+          color: white !important;
+          top: 75px !important;
+        }
+
+        .slick-prev {
+          left: -25px;
+        }
+
+        .slick-next {
+          right: -25px;
+        }
+
+        .slick-prev,
+        .slick-next {
+          position: absolute;
+          display: block;
+          height: 20px;
+          width: 20px;
+          line-height: 0px;
+          font-size: 0px;
+          cursor: pointer;
+          background: transparent;
+          color: transparent;
+          top: 50%;
+          transform: translate(0, -50%);
+          padding: 0;
+          border: none;
+          outline: none;
+        }
+
+        .slick-list {
+          position: relative;
+          overflow: hidden;
+          display: block;
+          margin: 0;
+          padding: 0;
+          transform: translate3d(0, 0, 0);
+
+          .slide-track {
+            position: relative;
+            left: 0;
+            top: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      .slick-slide {
+        justify-content: space-between !important;
+      }
+
+      .slick-slide > div {
+        padding: 0 0.5rem;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+query clipReview($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    ... on NodeReview {
+      clip {
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+      body {
+        value
+      }
+    }
+  }
+}

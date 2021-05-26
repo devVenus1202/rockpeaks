@@ -1,0 +1,14 @@
+mutation updateArtistScreen($nid: String!, $screenPercentage: Int!) {
+  updateArtist(id: $nid, screen_percentage: $screenPercentage) {
+    entity {
+      entityId
+      ... on NodeArtist {
+        screenPercentage
+      }
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

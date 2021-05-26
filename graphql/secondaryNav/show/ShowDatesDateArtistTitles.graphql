@@ -1,0 +1,31 @@
+query clipsByDateArtistShow (
+  $conditions: [EntityQueryFilterConditionInput]
+) {
+  clipsByDateArtistShow: nodeQuery(
+    limit: 100000,
+    filter: {
+      conditions: $conditions
+    },
+    sort: [
+      {
+        field: "title",
+        direction: ASC,
+      }
+    ]
+  ) {
+    entities {
+      ... on NodeClip {
+        clipNid: nid
+        clipTitle
+        status
+        artist {
+          entity {
+            ... on NodeArtist {
+              artistNid: nid
+            }
+          }
+        }
+      }
+    }
+  }
+}

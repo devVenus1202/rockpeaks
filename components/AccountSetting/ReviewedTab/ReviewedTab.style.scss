@@ -1,0 +1,70 @@
+@import 'styles/themes/theme';
+
+.reviewed-tracking-tab {
+  @include themify($themes) {
+    .reviewd-cards-slider {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .reviewd-cards-slider {
+      .slick-prev,
+      .slick-next {
+        top: 75px;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+        color: themed('mainColor') !important;
+      }
+    }
+    .card-content {
+      text-align: center;
+    }
+    a {
+      color: themed('textColor');
+    }
+    .card-text {
+      color: themed('textColor');
+      padding: 5px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      a {
+        color: themed('textColor');
+        margin-bottom: 0;
+
+        &:hover {
+          color: themed('secondaryNavHoverColor');
+          cursor: pointer;
+        }
+      }
+    }
+
+    .nav-tabs {
+      border: none;
+    }
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      border-color: transparent;
+      background-color: themed('componentBackgroundSecondary');
+
+      .fa-angle-down {
+        transform: rotate(0deg);
+      }
+    }
+
+    .fa-angle-down {
+      @include rem(20);
+      @include trans;
+      // margin-left: 10px;
+      transform: rotate(180deg);
+    }
+
+    .review-editor {
+      padding-right: 8rem;
+      padding-left: 8rem;
+    }
+    .tab-content-secondary {
+      background-color: #324054;
+    }
+  }
+}

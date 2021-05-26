@@ -1,0 +1,203 @@
+@import 'styles/themes/theme';
+
+.treebeard {
+  @include themify($themes) {
+    > ul {
+      > li {
+        > div {
+          background: themed('componentBackground');
+          &:first-child {
+            display: none !important;
+          }
+        }
+      }
+    }
+    ul {
+      display: block;
+      padding-left: 0;
+      li {
+        display: block;
+        white-space: nowrap;
+        li {
+          .tree-container {
+            background: themed('componentBackground');
+            box-shadow: inset 0 -1px 0 0 #404853;
+            padding: 1.25rem 1rem 1.25rem 2.15rem;
+            outline: 0;
+            @include trans;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          .tree-container.active {
+            box-shadow: inset 2px 0 0 0 $warning;
+            background: themed('componentBackgroundSecondary');
+            padding-left: 1.15rem;
+            border: none;
+            @include trans;
+            & + div:nth-child(2) {
+              .tree-container {
+                @include trans;
+                box-shadow: inset 2px 0 0 0 $warning;
+                border: none;
+              }
+            }
+          }
+          li {
+            .loading {
+              padding-left: 2.15rem;
+            }
+            .tree-container {
+              padding-left: 2.15rem;
+              background: themed('componentBackgroundSecondary');
+              &.active {
+                padding-left: 2.15rem;
+              }
+              .deepest {
+              }
+            }
+            .title {
+              color: themed('inputColor'); // #96a4b7;
+            }
+            li {
+              .loading {
+                padding-left: 3.4rem;
+              }
+              .tree-container {
+                background: themed('componentBackgroundSecondary');
+                padding-left: 3.4rem;
+                &.active {
+                  padding-left: 3.4rem;
+                }
+              }
+              li {
+                .loading {
+                  padding-left: 3.4rem;
+                }
+                .tree-container {
+                  background: themed('componentBackgroundSecondary');
+                  padding-left: 4.65rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .tree-container.deepest-level {
+      height: 40px;
+      font-size: 0.87rem;
+      cursor: default;
+      .title {
+        margin-top: -10px;
+      }
+
+      .tree-clip-title:hover {
+        cursor: pointer;
+        color: themed('textColorEmphorsized');
+        @include trans;
+      }
+      .tree-clip-date {
+        float: right;
+      }
+
+      &:hover {
+        background-color: $disabled-bg;
+      }
+    }
+
+    .tree-container.active {
+      .title-name {
+        color: themed('textColorEmphorsized');
+        @include trans;
+      }
+    }
+
+    .tree-container {
+      position: relative;
+      cursor: pointer;
+      @include trans;
+
+      &.deepest {
+        @include trans;
+        box-shadow: inset 2px 0 0 0 $warning;
+      }
+      &:hover {
+        .title {
+          .title-name {
+            color: themed('textColorEmphorsized');
+            @include trans;
+          }
+        }
+      }
+    }
+    .loading {
+      background: themed('componentBackgroundSecondary'); //$component-bg-secondary;
+      font-style: italic;
+      line-height: 24px;
+    }
+    .dropdown-loader {
+      .spinner {
+        width: 32px;
+        height: 32px;
+        div {
+          transform-origin: 16px 16px;
+          &:after {
+            top: 1px;
+            left: 14px;
+            width: 3px;
+            height: 7px;
+          }
+        }
+      }
+    }
+    .base {
+      display: block;
+      vertical-align: top;
+    }
+    .title {
+      color: themed('inputColor');
+      line-height: 24px;
+      vertical-align: middle;
+      outline: none;
+      .unknown {
+        color: #5a687b;
+        font-weight: 100;
+        letter-spacing: 1px;
+      }
+      .artist {
+        color: #e6e7e7;
+      }
+      .date {
+        padding-left: 1em;
+      }
+      button {
+        padding-left: 1em;
+      }
+    }
+    .icon-wrap {
+      svg {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .btn-add-to-playlist {
+      padding: 0;
+      float: right;
+    }
+    .btn-add-to-playlist:hover {
+      cursor: pointer;
+      svg {
+        path {
+          fill: #fff !important;
+          @include trans;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import 'styles/common/mixins';
+@import 'styles/themes/dark/variables';
+
+.calendar-btn {
+  display: inline-block;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    max-width: 53px;
+    transition: $animation-transition;
+  }
+
+  &:hover img {
+    transform: scale(1.15);
+  }
+}

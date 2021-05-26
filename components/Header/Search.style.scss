@@ -1,0 +1,19 @@
+.search-results {
+  position: absolute;
+  left: 50px;
+  top: 60px;
+  z-index: 1000;
+  .dropdown {
+    position: absolute;
+  }
+  .dropdown-toggle {
+    display: none;
+  }
+  .dropdown-menu {
+    transform: none !important;
+    z-index: 10001;
+    .dropdown-item {
+      cursor: pointer;
+    }
+  }
+}

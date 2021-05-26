@@ -1,0 +1,73 @@
+query getPlexAndPersonalItems($filter: EntityQueryFilterInput, $limit: Int, $offset: Int) {
+  personalClips: nodeQuery(filter: $filter, limit: $limit, offset: $offset) {
+    count
+    entities {
+      entityId
+      entityBundle
+      title: entityLabel
+      ... on NodePersonalClip {
+        key
+        sectionKey
+        sectionUuid
+        uid {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        parentClip {
+          entity {
+            entityId
+            entityLabel
+            ... on NodeClip {
+              archiveClipNodes {
+                entity {
+                  ... on NodeArchiveClip {
+                    nid
+                    title
+                    status
+                    metadataStatus
+                    VTT
+                  }
+                }
+              }
+              legacyImage {
+                url {
+                  path
+                }
+              }
+              fieldStillImage {
+                url
+              }
+              smartStillImage {
+                uri
+              }
+              smartStillImage320x480 {
+                uri
+              }
+              smartStillImage640x480 {
+                uri
+              }
+              smartStillImage1280x720 {
+                uri
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  plexItems: getPlexMediaItems {
+    message
+    result {
+      key
+      sectionKey
+      sectionUuid
+      title
+      file
+      bitrate
+      videoResolution
+      duration
+    }
+  }
+}

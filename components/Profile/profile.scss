@@ -1,0 +1,111 @@
+@import 'styles/themes/theme';
+.profile-wrapper {
+  @include themify($themes) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: themed('componentBackground');
+    border-radius: 5px;
+    .profile {
+      background-color: #8293a7;
+    }
+
+    h1 {
+      color: themed('mainColor');
+    }
+    .role {
+      background: #8293a7;
+      width: 150px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .info-nav {
+      width: 300px;
+      border-right: 1px solid themed('borderColor');
+    }
+    .main-info {
+      max-width: calc(100vw - 300px);
+      padding: 50px 100px !important;
+    }
+    .setting-avatar {
+      display: inline-block;
+      margin: 2rem;
+      width: 100%;
+      max-width: 90px;
+      height: 90px;
+      border: 1px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      padding: 2px;
+      background: rgba(250, 217, 97, 1);
+      background: -moz-linear-gradient(
+        top,
+        rgba(250, 217, 97, 1) 0%,
+        rgba(249, 162, 62, 1) 49%,
+        rgba(247, 108, 28, 1) 100%
+      );
+      background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(250, 217, 97, 1)),
+        color-stop(49%, rgba(249, 162, 62, 1)),
+        color-stop(100%, rgba(247, 108, 28, 1))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(250, 217, 97, 1) 0%,
+        rgba(249, 162, 62, 1) 49%,
+        rgba(247, 108, 28, 1) 100%
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(250, 217, 97, 1) 0%,
+        rgba(249, 162, 62, 1) 49%,
+        rgba(247, 108, 28, 1) 100%
+      );
+      background: -ms-linear-gradient(
+        top,
+        rgba(250, 217, 97, 1) 0%,
+        rgba(249, 162, 62, 1) 49%,
+        rgba(247, 108, 28, 1) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(250, 217, 97, 1) 0%,
+        rgba(249, 162, 62, 1) 49%,
+        rgba(247, 108, 28, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fad961', endColorstr='#f76c1c', GradientType=0 );
+      img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .avatar {
+      max-width: 300px;
+    }
+    .slick-carousel-wrap {
+      margin-left: -21px;
+    }
+    .nav-tabs {
+      border-right: none;
+    }
+    .modal-nav.modal-nav-vertical ul {
+      border-bottom: 0;
+      border-right: none;
+      padding-bottom: 2.5rem;
+      padding-top: 2.5rem;
+      text-align: right;
+      li {
+        margin: 30px -1px;
+      }
+    }
+    .text-muted {
+      color: themed('textColor') !important;
+    }
+  }
+}

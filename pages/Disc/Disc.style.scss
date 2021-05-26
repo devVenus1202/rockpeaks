@@ -1,0 +1,24 @@
+@import 'styles/themes/theme';
+.page-disc-blink {
+  @include themify($themes) {
+    &-section {
+      background: {
+        color: themed('mainBackgroundColor');
+        position: top center;
+        repeat: no-repeat;
+        size: 100% 100%;
+      }
+    }
+    &-blink {
+      @include linear-gradient(themed('detailPageGradient1'), themed('detailPageGradient2'));
+      padding: 0 5px;
+    }
+    .clip-list-hr {
+      background-color: #373e48 !important;
+    }
+    .disc-section-container {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+query {
+  fetchPlexMediaItems {
+    message
+    result {
+      key
+      sectionKey
+      title
+      file
+      bitrate
+      videoResolution
+      duration
+      sectionUuid
+    }
+  }
+}

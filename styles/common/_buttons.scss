@@ -1,0 +1,114 @@
+.btn {
+  @include rem(16);
+  min-width: 8.66667rem;
+  text-transform: uppercase;
+  .fa {
+    @include rem(20);
+    line-height: 10px;
+  }
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  @include rem(14);
+  min-width: 5.5rem;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  @include rem(18);
+  padding: 0.8rem 1.9rem;
+
+  @include media-breakpoint-down(sm) {
+    @include rem(15);
+    padding: 0.8rem 1rem;
+    white-space: normal;
+  }
+}
+
+.btn-group .btn {
+  min-width: auto;
+}
+
+.btn-group.all-width {
+  margin-bottom: 10px;
+  display: flex;
+
+  & > .btn:first-child {
+    max-width: 27%;
+  }
+
+  & > .btn:last-child {
+    max-width: 27%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:focus {
+  color: $white;
+}
+
+.btn-warning:not(:disabled):not(.disabled):active,
+.btn-warning:not(:disabled):not(.disabled).active,
+.show > .btn-warning.dropdown-toggle {
+  color: $white;
+}
+
+.btn-outline-warning:hover,
+.btn-outline-warning:not(:disabled):not(.disabled):active,
+.btn-outline-warning:not(:disabled):not(.disabled).active,
+.show > .btn-outline-warning.dropdown-toggle {
+  color: $white;
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-info:focus {
+  color: $white;
+}
+
+.switch-type .btn-secondary {
+  @include themify($themes) {
+    @include button-variant(themed("secondary"), themed("secondary"), $hover-background: darken(themed("secondary"), 7.5%), $hover-border: darken(themed("secondary"), 10%), $active-background: darken(themed("secondary"), 10%), $active-border: darken(themed("secondary"), 12.5%))
+  }
+  
+}
+
+
+.btn-danger{
+  @include themify($themes) {
+    @include button-variant(themed("danger"), themed("danger"), $hover-background: darken(themed("danger"), 7.5%), $hover-border: darken(themed("danger"), 10%), $active-background: darken(themed("danger"), 10%), $active-border: darken(themed("danger"), 12.5%))
+  }
+}
+
+
+.btn-info:not(:disabled):not(.disabled):active,
+.btn-info:not(:disabled):not(.disabled).active,
+.show > .btn-info.dropdown-toggle {
+  color: $white;
+}
+
+.btn-outline-info:hover,
+.btn-outline-info:not(:disabled):not(.disabled):active,
+.btn-outline-info:not(:disabled):not(.disabled).active,
+.show > .btn-outline-info.dropdown-toggle {
+  color: $white;
+}
+
+@media (min-width: 768px) and (max-width: 870px) {
+  .btn-date-switch > .btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn {
+    padding: 0.6rem 1.4rem;
+  }
+}

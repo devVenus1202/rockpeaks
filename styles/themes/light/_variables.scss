@@ -1,0 +1,130 @@
+@import 'styles/common/variables';
+//
+// Colors
+//
+$main-background: white;
+$main-color: rgba(0, 0, 0, 1);
+$modal-border-color: #d6d0ca;
+$border-color: #dbd5ce;
+$component-bg: white;
+$component-bg-secondary: darken($white, 5%);
+$disabled-bg: darken($dark, 8%);
+$disactive-color: #d6d0ca;
+// main text color
+$main: black;
+$mainTextColor: #374355;
+$body-color: white;
+
+$text-color-reversed: #3d4d65;
+$text-emphorsized: $input-bg;
+$text-muted: #374355;
+// $secondary: #374355;
+
+// Buttons + Forms
+
+$input-bg: #f2f1ef; //#eceff4;
+$input-border-color: #d6d7d1;
+$input-color: #9a9792; //#8897a9;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $secondary;
+$input-focus-color: $input-color;
+
+$danger: #00bb68;
+// Modals
+
+// Padding applied to the modal body
+
+$modal-content-bg: #fff;
+
+// Pagination
+
+$pagination-color: $text-grey;
+$pagination-bg: $component-bg;
+$pagination-border-color: $component-bg;
+
+$pagination-hover-color: $text-grey;
+$pagination-active-color: $white;
+$pagination-active-border-color: $warning;
+$pagination-active-bg: $warning;
+
+$pagination-disabled-color: $text-grey;
+$pagination-disabled-bg: $disabled-bg;
+$pagination-disabled-border-color: $disabled-bg;
+
+$pagination-hover-color: $text-grey;
+$pagination-hover-bg: darken($dark, 5%);
+$pagination-hover-border-color: darken($dark, 8%);
+
+$pagination-focus-box-shadow: $input-btn-focus-box-shadow;
+$pagination-focus-outline: 0;
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-bg: #3d4d65;
+
+$dropdown-link-color: #c5d0e0;
+$dropdown-link-hover-color: darken($gray-100, 5%);
+$dropdown-link-hover-bg: darken(#3d4d65, 5%);
+
+//Footer
+$footer-link-color: #f2f2f2;
+
+//Gradient background
+$gradient-bg-1: rgba(255, 255, 255, 1);
+$gradient-bg-2: rgba(255, 255, 255, 0.9);
+
+//header
+$header-color: #3d4d65;
+$header-color-hover: #000;
+$header-darker: linear-gradient(white, rgba(255, 255, 255, 0));
+$header-darker-hover: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 1) 100%);
+
+$header-bright: #fff;
+$header-bright-hover: #fff;
+
+$logo: '../../public/static/images/light-logo.svg';
+
+$link-color: $text-muted;
+
+$menu-item-bg: #c8c9ca linear-gradient(180deg, #efeff0, #c8c9ca) repeat-x;
+
+$split-line-bg: $border-color;
+
+//image mask
+$gradient-mask: (
+  '1': rgba(255, 255, 255, 1),
+  '2': rgba(255, 255, 255, 0.21),
+  '3': rgba(239, 245, 248, 0),
+);
+
+$background-mask-color: rgba(239, 245, 248, 0.78);
+
+//secondary navbar
+$sec-nav-bg: #ededed;
+$sec-nav-active-bg: #f2f1ee;
+$sec-nav-hover-bg: rgba(255, 237, 238, 1);
+$sec-nav-hover-color: #000;
+$sec-nav-color: #939394;
+$media-box-hover-bg: darken(white, 15%);
+
+//detail page background
+$detailPageBg: #dedcde;
+$detailPageGradient1: #aeaeae;
+$detailPageGradient2: #e9e7e9;
+
+//Chip
+$tag-bg: #8493a8;
+
+$secondary: #939394;
+
+//indicatorColr
+$custom-control-indicator-border: #929292;
+$custom-control-indicator-checked-color: $custom-control-indicator-border;
+
+$carouselShawdowColor: rgb(247, 145, 39);
+$thumb-border-color: #242529;
+
+$stripped-color: rgba(42, 62, 83, 0.5);

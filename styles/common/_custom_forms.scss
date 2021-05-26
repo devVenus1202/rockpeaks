@@ -1,0 +1,72 @@
+@import 'styles/themes/theme';
+
+$custom-checkbox-indicator-icon-checked: str-replace(
+  url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"),
+  '#',
+  '%23'
+);
+
+.custom-checkbox {
+  .custom-control-input:checked ~ .custom-control-label {
+    // &::before {
+    // }
+    &::after {
+      background-image: $custom-checkbox-indicator-icon-checked;
+    }
+  }
+}
+
+
+.custom-radio {
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      @include gradient-bg($custom-control-indicator-checked-bg);
+    }
+    // &::after {
+    //   background-image: $custom-radio-indicator-icon-checked;
+    // }
+  }
+}
+
+.custom-control-label {
+  @include themify($themes) {
+    position: relative;
+    line-height: 15px;
+    margin-bottom: 0;
+    padding-left: 5px;
+    // Background-color and (when enabled) gradient
+    &::before {
+      position: absolute;
+      top: (1rem * $line-height-base - $custom-control-indicator-size) / 2;
+      left: -$custom-control-gutter;
+      border: 2px solid themed('customControlIndicatorBorder') !important;
+      border-color: themed('customControlIndicatorBorder') !important;
+    }
+
+    &::after {
+      top: ((1rem * $line-height-base - $custom-control-indicator-size) / 2);
+      left: -1.5rem !important;
+    }
+  }
+}
+
+.custom-file {
+  width: auto;
+  max-width: 10rem;
+  text-transform: uppercase;
+}
+
+.custom-file-label {
+  @include rem(16);
+  white-space: nowrap;
+  height: auto;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    display: none;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": {
+            "node": "current"
+          }
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@root": "./",
+          "@static": "./public/static",
+          "@styles": "./styles",
+          "@graphql": "./graphql",
+          "@helpers": "./helpers",
+          "@lib": "./lib",
+          "@constants": "./constants",
+          "@components": "./components",
+          "@locales": "./locales"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "import-graphql"
+    ]
+  ]
+}

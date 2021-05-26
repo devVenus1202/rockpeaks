@@ -1,0 +1,13 @@
+query clipDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    reverseClipsNode {
+      entities {
+        entityId
+        entityBundle
+        entityLabel
+      }
+    }
+  }
+}

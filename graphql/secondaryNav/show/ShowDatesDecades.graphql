@@ -1,0 +1,101 @@
+query decadesByShow($nid: String) {
+  decade1950: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "1950"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "1959"}
+    ]}
+  ) {
+    count
+  }
+  decade1960: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "1960"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "1969"}
+    ]}
+  ) {
+    count
+  }
+  decade1970: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "1970"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "1979"}
+    ]}
+  ) {
+    count
+  }
+  decade1980: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "1980"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "1989"}
+    ]}
+  ) {
+    count
+  }
+  decade1990: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "1990"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "1999"}
+    ]}
+  ) {
+    count
+  }
+  decade2000: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "2000"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "2009"}
+    ]}
+  ) {
+    count
+  }
+  decade2010: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "2010"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "2019"}
+    ]}
+  ) {
+    count
+  }
+  decade2020: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "2020"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "2029"}
+    ]}
+  ) {
+    count
+  }
+  decade2030: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: GREATER_THAN_OR_EQUAL, value: "2030"},
+      {field: "field_year", operator: SMALLER_THAN_OR_EQUAL, value: "2039"}
+    ]}
+  ) {
+    count
+  }
+  unknown: nodeQuery(filter: {
+    conditions: [
+      {field: "type", value: "clip", operator: EQUAL},
+      {field: "show.entity.nid", value: [$nid], operator: EQUAL},
+      {field: "field_year", operator: IS_NULL}
+    ]}
+  ) {
+    count
+  }
+}

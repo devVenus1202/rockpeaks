@@ -1,0 +1,231 @@
+@import 'styles/themes/dark/variables';
+@import 'styles/common/mixins';
+@import 'styles/themes/theme';
+.contribute-page {
+  @include themify_class($themes) {
+    color: themed('textColor');
+    .section.section-hero {
+      padding: 240px 0 70px;
+      &.padding-smaller {
+        padding: 100px 0 100px;
+      }
+    }
+
+    .section-hero {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &.hero-bg-1 {
+        background-image: url(/static/images/hero-bg-1.jpg);
+      }
+      &.hero-bg-2 {
+        background-image: url(/static/images/hero-bg-2.jpg);
+      }
+      &.hero-bg-3 {
+        background-image: url(/static/images/hero-bg-3.jpg);
+      }
+      &.home-page-authenticated-user {
+        background-image: url(/static/images/home-authentic-user-bg.jpg);
+      }
+      &-btn {
+        margin-bottom: 150px;
+      }
+    }
+
+    .poster-section {
+      min-height: 570px;
+      padding: 0;
+      &.poster-bg-1 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/static/images/poster-bg-1.jpg);
+      }
+      &.poster-bg-2 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/static/images/poster-bg-2.jpg);
+      }
+    }
+
+    .window-section {
+      padding: 30px 0 70px;
+      &-box {
+        background-color: $component-bg;
+        padding: 30px 35px;
+        @include media-breakpoint-down(sm) {
+          padding: 20px 15px;
+        }
+      }
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: themed('mainColor');
+    }
+
+    .btn-next-step {
+      img {
+        @include transition($animation-transition);
+        opacity: 0.7;
+      }
+      &:hover img {
+        opacity: 1;
+      }
+    }
+
+    .container-info-bloks {
+      display: flex;
+    }
+
+    .main-info {
+      padding: 50px 25% 50px 100px;
+      background-color: #3d4d65;
+      display: inline-block;
+      height: 100%;
+      min-height: 900px;
+      float: left;
+      margin-bottom: 50px;
+      width: 100%;
+    }
+
+    .secondary-info {
+      // border-right: solid 1px themed('borderColor');
+      display: inline-block;
+      height: 100%;
+      min-height: 900px;
+      width: 100%;
+      max-width: 320px;
+      float: left;
+      margin-bottom: 50px;
+
+      &-text {
+        color: themed('textColorSecondary');
+        display: block;
+        padding-top: 60px;
+        padding-left: 9px;
+        // max-width: 205px;
+        text-align: left;
+        // margin: 0 auto;
+        .sub-section {
+          &-title {
+            color: themed('mainColor');
+          }
+        }
+      }
+    }
+
+    // Gradient
+    // .gradient-vertical-black-blue {
+    //   background: themed('gradientBg1');
+    //   background: -moz-linear-gradient(top, themed('gradientBg1') 10%, themed('gradientBg2') 100%);
+    //   background: -webkit-gradient(
+    //     left top,
+    //     left bottom,
+    //     color-stop(10%, themed('gradientBg1')),
+    //     color-stop(100%, themed('gradientBg2'))
+    //   );
+    //   background: -webkit-linear-gradient(
+    //     top,
+    //     themed('gradientBg1') 10%,
+    //     themed('gradientBg2') 100%
+    //   );
+    //   background: -o-linear-gradient(top, themed('gradientBg1') 10%, themed('gradientBg2') 100%);
+    //   background: -ms-linear-gradient(top, themed('gradientBg1') 10%, themed('gradientBg2') 100%);
+    //   background: linear-gradient(to bottom, themed('gradientBg1') 10%, themed('gradientBg2') 100%);
+    //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1e28', endColorstr='#3e4e64', GradientType=0 );
+    // }
+
+    // .gradient-vertical-black-transparent {
+    //   background: rgba(26, 30, 40, 0.96);
+    //   background: -moz-linear-gradient(
+    //     top,
+    //     rgba(26, 30, 40, 0.96) 0%,
+    //     rgba(26, 30, 40, 0.21) 80%,
+    //     rgba(26, 30, 40, 0.02) 100%
+    //   );
+    //   background: -webkit-gradient(
+    //     left top,
+    //     left bottom,
+    //     color-stop(0%, rgba(26, 30, 40, 0.96)),
+    //     color-stop(80%, rgba(26, 30, 40, 0.21)),
+    //     color-stop(100%, rgba(26, 30, 40, 0.02))
+    //   );
+    //   background: -webkit-linear-gradient(
+    //     top,
+    //     rgba(26, 30, 40, 0.96) 0%,
+    //     rgba(26, 30, 40, 0.21) 80%,
+    //     rgba(26, 30, 40, 0.02) 100%
+    //   );
+    //   background: -o-linear-gradient(
+    //     top,
+    //     rgba(26, 30, 40, 0.96) 0%,
+    //     rgba(26, 30, 40, 0.21) 80%,
+    //     rgba(26, 30, 40, 0.02) 100%
+    //   );
+    //   background: -ms-linear-gradient(
+    //     top,
+    //     rgba(26, 30, 40, 0.96) 0%,
+    //     rgba(26, 30, 40, 0.21) 80%,
+    //     rgba(26, 30, 40, 0.02) 100%
+    //   );
+    //   background: linear-gradient(
+    //     to bottom,
+    //     rgba(26, 30, 40, 0.96) 0%,
+    //     rgba(26, 30, 40, 0.21) 80%,
+    //     rgba(26, 30, 40, 0.02) 100%
+    //   );
+    //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1e28', endColorstr='#1a1e28', GradientType=0 );
+    // }
+
+    @media (max-width: 1366px) {
+      .main-info {
+        padding: 50px 100px 50px 100px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      .main-info {
+        min-height: 1200px;
+      }
+
+      .secondary-info {
+        min-height: 1200px;
+      }
+
+      .main-info {
+        padding: 50px 50px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .container-info-bloks {
+        display: block;
+      }
+
+      .main-info {
+        display: block;
+        width: 100%;
+        min-height: 100%;
+        margin-bottom: 30px;
+        padding: 50px 0 50px 0px;
+      }
+
+      .secondary-info {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        margin-bottom: 30px;
+        &-text {
+          max-width: auto;
+          padding: 50px 0;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

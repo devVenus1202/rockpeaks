@@ -1,0 +1,15 @@
+mutation updateShow($nid: String!, $wikiUrl: String!) {
+	updateShow(id: $nid, show_wikipedia_page: $wikiUrl) {
+		entity {
+			entityId
+			entityLabel
+			... on NodeShow {
+				showWikipediaPage
+			}
+		}
+		violations {
+			message
+		}
+		errors
+	}
+}

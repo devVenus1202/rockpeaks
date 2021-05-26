@@ -1,0 +1,271 @@
+query clipDetail($nid: String!) {
+  nodeById(id: $nid) {
+    nid
+    title
+    type {
+      targetId
+    }
+    ... on NodeClip {
+      clipTitle
+      clipType {
+        targetId
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+      clipTags {
+        targetId
+      }
+      clipProduction {
+        targetId
+        entity {
+          entityId
+          entityLabel
+        }
+      }
+      fieldDay
+      fieldMonth
+      fieldYear
+      artist {
+        entity {
+          nid
+          title
+        }
+      }
+      show {
+        entity {
+          nid
+          title
+        }
+      }
+      body {
+        processed
+        value
+        summaryProcessed
+      }
+      legacyImage {
+        url {
+          path
+        }
+      }
+      fieldStillImage {
+        url
+      }
+      smartStillImage {
+        uri
+      }
+      smartStillImage320x480 {
+        uri
+      }
+      smartStillImage640x480 {
+        uri
+      }
+      smartStillImage1280x720 {
+        uri
+      }
+      legacyRanking
+      publicClipNodes {
+        targetId
+        entity {
+          ... on NodePublicClip {
+            body {
+              processed
+              summaryProcessed
+            }
+            publicSource
+            url
+            viewCount
+            commentCount
+            clipTitle
+            durationHours
+            durationMins
+            durationSecs
+            inSecs
+            inMins
+            inHours
+            outSecs
+            outMins
+            outHours
+            videoStatus
+            uploader
+            uploaderClipTitle
+            bitrate
+            widthAndHeight
+            verticalResolution
+            channelUrl
+            uploadDate {
+              value
+              date
+            }
+            status
+            removedDate {
+              date
+            }
+            removedReason
+            videoStatus
+          }
+        }
+      }
+      personalClipNodes {
+        targetId
+        entity {
+          ... on NodePersonalClip {
+            body {
+              processed
+              summaryProcessed
+            }
+            entityId
+            title
+            status
+            durationMins
+            sectionKey
+            sectionUuid
+            key
+            entityUrl {
+              path
+            }
+            durationHours
+            bitrate
+            clipTitle
+            durationHours
+            durationMins
+            durationSecs
+            videoStatus
+            bitrate
+            widthAndHeight
+            verticalResolution
+          }
+        }
+      }
+      archiveClipNodes {
+        targetId
+        entity {
+          ... on NodeArchiveClip {
+            body {
+              processed
+              summaryProcessed
+            }
+            durationHours
+            durationMins
+            durationSecs
+            videoStatus
+            bitrate
+            widthAndHeight
+            verticalResolution
+            status
+            metadataStatus
+            VTT
+          }
+        }
+      }
+    }
+  }
+  getPlexAccount {
+    message
+    plexAccount {
+      id
+      uuid
+      email
+      username
+      title
+      thumb
+      authToken
+      clientId
+      sections {
+        key
+        type
+        title
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+      selected_sections {
+        key
+        type
+        title
+        server {
+          name
+          host
+          port
+          machineIdentifier
+        }
+      }
+    }
+    user {
+      entityId
+      entityLabel
+    }
+  }
+  nodeQuery(
+    filter: {
+      conditions: [
+        { field: "clip", value: [$nid], operator: EQUAL }
+        { field: "status", value: "1", operator: EQUAL }
+        { field: "type", value: "review", operator: EQUAL }
+      ]
+    }
+  ) {
+    entities {
+      entityId
+      ... on NodeReview {
+        nid
+        title
+        clip {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        body {
+          value
+        }
+        clipTags {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+        uid {
+          targetId
+          entity {
+            name
+            rpCustomerProfiles {
+              entity {
+                ... on ProfileRpCustomer {
+                  avatarImage {
+                    thumbnail: derivative(style: THUMBNAIL) {
+                      url
+                      width
+                      height
+                    }
+                    large: derivative(style: LARGE) {
+                      url
+                      width
+                      height
+                    }
+                    url
+                    width
+                    height
+                    alt
+                    title
+                  }
+                  fbProfileLink {
+                    uri
+                  }
+                  twitterProfileLink {
+                    uri
+                  }
+                  themeSelectionState
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

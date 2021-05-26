@@ -1,0 +1,11 @@
+mutation($id: String!) {
+  deleteClipReview(id: $id) {
+    entity {
+      entityId
+    }
+    violations {
+      message
+    }
+    errors
+  }
+}

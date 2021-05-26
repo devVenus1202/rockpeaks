@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="28px" viewBox="0 0 29 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Discs Icon Disabled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="1 0 28.9999125 0 28.9999125 28 1 28"></polygon>
+    </defs>
+    <g id="Discs-Icon-Disabled" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Clip-2"></g>
+        <path d="M14.9999125,17.5 C13.0670375,17.5 11.4999125,15.932875 11.4999125,14 C11.4999125,12.067125 13.0670375,10.5 14.9999125,10.5 C16.9327875,10.5 18.4999125,12.067125 18.4999125,14 C18.4999125,15.932875 16.9327875,17.5 14.9999125,17.5 M0.9999125,14 C0.9999125,21.732375 7.2675375,28 14.9999125,28 C22.7322875,28 28.9999125,21.732375 28.9999125,14 C28.9999125,6.267625 22.7322875,0 14.9999125,0 C7.2675375,0 0.9999125,6.267625 0.9999125,14 Z" id="Fill-1" fill="#ffffff"></path>
+    </g>
+</svg>

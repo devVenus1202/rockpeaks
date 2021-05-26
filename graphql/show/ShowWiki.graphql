@@ -1,0 +1,18 @@
+fragment showDetailsShowWiki on NodeShow {
+	wikipediaExcerpt {
+		processed
+		summaryProcessed
+	}
+	showWikipediaPage
+}
+
+query showWiki($nid: String!) {
+	nodeById(id: $nid) {
+		nid
+		title
+		type {
+			targetId
+		}
+		...showDetailsShowWiki
+	}
+}

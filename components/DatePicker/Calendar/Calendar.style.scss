@@ -1,0 +1,137 @@
+@import 'styles/themes/theme';
+
+.calendar {
+  @include themify($themes) {
+    .rdt {
+      position: relative;
+    }
+
+    .rdtPicker {
+      display: none;
+      position: absolute;
+      width: 100%;
+      background: transparent;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .rdtOpen .rdtPicker {
+      display: block;
+    }
+
+    .rdtStatic .rdtPicker {
+      box-shadow: none;
+      position: static;
+    }
+
+    .rdtPicker table {
+      width: 100%;
+      margin: 0;
+      text-transform: uppercase;
+
+      th {
+        color: themed('textMuted') !important;
+        border: none;
+        border-top: 1px solid #6b7686;
+        border-bottom: 1px solid #6b7686;
+        text-align: center !important;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 2.5;
+      }
+      td {
+        padding: 1px;
+        border: 1px solid transparent;
+        text-align: center;
+        cursor: pointer;
+        color: themed('textMuted');
+        font-weight: 400;
+
+        a {
+          padding: 0.25em 0.2em;
+        }
+      }
+
+      tbody {
+        tr {
+          height: 33px;
+        }
+      }
+    }
+
+    .rdtPicker td.rdtOld,
+    .rdtPicker td.rdtNew {
+      color: themed('disactiveColor');
+      cursor: pointer;
+    }
+
+    .rdtPicker td.rdtToday {
+      position: relative;
+      top: 3px;
+      background-color: $warning;
+      color: #fff !important;
+      padding: 1px 4px;
+      display: inline-block;
+      border-radius: $border-radius;
+    }
+
+    .rdtPicker td.rdtActive,
+    .rdtPicker td.rdtActive:hover {
+      color: $warning;
+    }
+
+    .rdtPicker td.rdtActive.rdtToday:before {
+      border-bottom-color: #fff;
+    }
+
+    .rdtPicker td span.rdtOld {
+      color: #999999;
+    }
+
+    .rdtPicker .dow {
+      width: 14.2857%;
+      text-transform: uppercase;
+      cursor: default;
+    }
+
+    .rdtPicker thead tr:first-child th {
+      cursor: pointer;
+    }
+    .rdtPicker thead tr:first-child th:hover {
+      background: #eeeeee;
+    }
+
+    .rdtPicker tfoot {
+      border-top: 1px solid #f9f9f9;
+    }
+
+    .rdtPicker button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .rdtPicker button:hover {
+      background-color: #eee;
+    }
+
+    .rdtPicker thead button {
+      width: 100%;
+      height: 100%;
+    }
+
+    td.rdtMonth,
+    td.rdtYear {
+      height: 50px;
+      width: 25%;
+      cursor: pointer;
+    }
+    td.rdtMonth:hover,
+    td.rdtYear:hover {
+      background: #eee;
+    }
+
+    .rdtPicker thead tr:first-child {
+      display: none;
+    }
+  }
+}

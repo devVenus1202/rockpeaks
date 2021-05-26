@@ -1,0 +1,16 @@
+query getParentClipType($filter: EntityQueryFilterInput) {
+	taxonomyTermQuery(filter: $filter, limit: 1000) {
+		entities {
+			... on TaxonomyTermClipType {
+				tid
+				name
+				parent {
+					entity {
+						tid
+						name
+					}
+				}
+			}
+		}
+	}
+}

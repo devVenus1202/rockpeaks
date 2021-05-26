@@ -1,0 +1,30 @@
+mutation updatePublicClip($nid: String!, $url: String, $in_secs: Int, $in_mins: Int, $in_hours: Int, $out_secs: Int, $out_mins: Int, $out_hours: Int) {
+	updatePublicClip(
+		id: $nid
+		input: { url: $url, in_secs: $in_secs, in_mins: $in_mins, in_hours: $in_hours, out_secs: $out_secs, out_mins: $out_mins, out_hours: $out_hours }
+	) {
+		entity {
+			entityId
+			entityLabel
+			... on NodePublicClip {
+				url
+				inSecs
+				inMins
+				inHours
+				outSecs
+				outMins
+				outHours
+				parentClip {
+					entity {
+						entityId
+						entityLabel
+					}
+				}
+			}
+		}
+		violations {
+			message
+		}
+		errors
+	}
+}

@@ -1,0 +1,38 @@
+query playlists($filter: EntityQueryFilterInput, $limit: Int, $sort: [EntityQuerySortInput]) {
+  nodeQuery(filter: {
+		"conditions": [
+			{
+				"field": "uid",
+				"value": "410",
+				"operator": "EQUAL"
+			},
+			{
+				"field": "status",
+				"value": true,
+				"operator": "EQUAL"
+			},
+			{
+				"field": "type",
+				"value": "playlist",
+				"operator": "EQUAL"
+			}
+		]
+	}, limit: $limit, sort: $sort) {
+    entities {
+      entityId
+      ... on NodePlaylist {
+        nid
+        title
+        created
+        changed
+        clipsCount
+        clips {
+          entity {
+            entityId
+            entityLabel
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+mutation updateClip($id: String!, $input: ClipUpdateInput!) {
+  clip: updateClip(id: $id, input: $input) {
+    entity {
+      entityId
+      entityLabel
+      ... on NodeClip {
+        body {
+          processed
+        }
+      }
+    }
+    errors
+    violations {
+      message
+    }
+  }
+}

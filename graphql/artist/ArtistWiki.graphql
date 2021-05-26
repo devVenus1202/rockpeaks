@@ -1,0 +1,17 @@
+query artistWiki($nid: String!) {
+	nodeById(id: $nid) {
+		nid
+		title
+		type {
+			targetId
+		}
+		... on NodeArtist {
+			artistWikipediaBody {
+				processed
+				summaryProcessed
+				bodySummary
+			}
+			artistWikipediaPage
+		}
+	}
+}
